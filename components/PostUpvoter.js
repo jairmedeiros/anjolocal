@@ -33,7 +33,7 @@ const PostUpvoter = ({ votes, id }) => {
   };
 
   return (
-    <button onClick={() => upvotePost()}>
+    <button type="button" onClick={() => upvotePost()}>
       {votes}
       <style jsx>{`
         button {
