@@ -71,7 +71,7 @@ export default function PostList() {
         ))}
       </ul>
       {areMorePosts && (
-        <button onClick={() => loadMorePosts()} disabled={loadingMorePosts}>
+        <button type="button" onClick={() => loadMorePosts()} disabled={loadingMorePosts}>
           {loadingMorePosts ? 'Loading...' : 'Show More'}
         </button>
       )}
