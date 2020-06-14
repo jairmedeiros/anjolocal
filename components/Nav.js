@@ -1,8 +1,8 @@
-import Link from 'next/link'
-import { useRouter } from 'next/router'
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export default function Nav() {
-  const { pathname } = useRouter()
+  const { pathname } = useRouter();
 
   return (
     <header>
@@ -29,5 +29,5 @@ export default function Nav() {
         }
       `}</style>
     </header>
-  )
+  );
 }

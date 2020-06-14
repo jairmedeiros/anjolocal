@@ -1,5 +1,5 @@
-import Nav from './Nav'
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import Nav from './Nav';
 
 const Layout = ({ children }) => (
   <main>
@@ -7,9 +7,8 @@ const Layout = ({ children }) => (
     {children}
     <style jsx global>{`
       * {
-        font-family: Menlo, Monaco, 'Lucida Console', 'Liberation Mono',
-          'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New',
-          monospace, serif;
+        font-family: Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono',
+          'Bitstream Vera Sans Mono', 'Courier New', monospace, serif;
       }
       body {
         margin: 0;
@@ -51,10 +50,10 @@ const Layout = ({ children }) => (
       }
     `}</style>
   </main>
-)
+);
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Layout
+export default Layout;
