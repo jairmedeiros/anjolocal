@@ -1,4 +1,6 @@
 import { useMutation } from '@apollo/react-hooks';
+import gql from 'graphql-tag';
+import { ALL_POSTS_QUERY, allPostsQueryVars } from './PostList';
 
 const CREATE_POST_MUTATION = gql`
   mutation createPost($title: String!, $url: String!) {
