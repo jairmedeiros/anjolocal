@@ -1,5 +1,4 @@
 {
-  "comment": "MD044: Proper names should have the correct capitalization.",
   "header-increment": true,
   "first-header-h1": true,
   "header-style": {
@@ -16,7 +15,6 @@
   },
   "no-trailing-spaces": {
     "br_spaces": 0,
-    "comment": "Empty lines inside list items should not be indented.",
     "list_item_empty_lines": false
   },
   "no-hard-tabs": {
