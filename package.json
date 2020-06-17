@@ -1,11 +1,31 @@
 {
-  "name": "with-apollo-and-redux",
-  "version": "2.0.0",
+  "name": "anjolocal",
+  "description": "Plataforma que exibe instituições (cadastradas) que precisam de doações.",
+  "version": "1.0.0",
+  "private": true,
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jairmdeiros/anjolocal.git"
+  },
+  "keywords": [
+    "jamstack",
+    "nextjs",
+    "apollo",
+    "redux",
+    "doacoes",
+    "graphql"
+  ],
+  "author": "Jair Medeiros <jmferreira70@gmail.com>",
+  "contributors": [
+    "Felipe Bruce <frb@ecomp.poli.br>"
+  ],
+  "bugs": "https://github.com/jairmdeiros/anjolocal/issues",
   "dependencies": {
     "@apollo/react-hooks": "3.1.3",
     "@apollo/react-ssr": "3.1.3",
