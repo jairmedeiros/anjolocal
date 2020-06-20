@@ -1,29 +1,29 @@
-import { useDispatch } from 'react-redux';
-import { initializeStore } from '../lib/redux';
-import { initializeApollo } from '../lib/apollo';
-import useInterval from '../lib/useInterval';
-import Layout from '../components/Layout';
-import Clock from '../components/Clock';
-import Counter from '../components/Counter';
-import Submit from '../components/Submit';
-import PostList, { ALL_POSTS_QUERY, allPostsQueryVars } from '../components/PostList';
+// import { useDispatch } from 'react-redux';
+import { initializeStore } from '../src/Redux';
+import { initializeApollo } from '../src/Apollo';
+// import useInterval from '../src/lib/useInterval';
+import Layout from '../src/Components/Layout';
+// import Clock from '../src/Components/Clock';
+import Counter from '../src/Components/Counter';
+import Submit from '../src/Components/Submit';
+import PostList, { ALL_POSTS_QUERY, allPostsQueryVars } from '../src/Components/PostList';
 
 const IndexPage = () => {
   // Tick the time every second
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  useInterval(() => {
-    dispatch({
-      type: 'TICK',
-      light: true,
-      lastUpdate: Date.now(),
-    });
-  }, 1000);
+  // useInterval(() => {
+  //   dispatch({
+  //     type: 'TICK',
+  //     light: true,
+  //     lastUpdate: Date.now(),
+  //   });
+  // }, 1000);
 
   return (
     <Layout>
       {/* Redux */}
-      <Clock />
+      {/* <Clock /> */}
       <Counter />
       <hr />
       {/* Apollo */}

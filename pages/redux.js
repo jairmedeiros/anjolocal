@@ -1,25 +1,25 @@
-import { useDispatch } from 'react-redux';
-import { initializeStore } from '../lib/redux';
-import useInterval from '../lib/useInterval';
-import Layout from '../components/Layout';
-import Clock from '../components/Clock';
-import Counter from '../components/Counter';
+// import { useDispatch } from 'react-redux';
+import { initializeStore } from '../src/Redux';
+// import useInterval from '../lib/useInterval';
+import Layout from '../src/Components/Layout';
+// import Clock from '../src/Components/Clock';
+import Counter from '../src/Components/Counter';
 
 const ReduxPage = () => {
   // Tick the time every second
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  useInterval(() => {
-    dispatch({
-      type: 'TICK',
-      light: true,
-      lastUpdate: Date.now(),
-    });
-  }, 1000);
+  // useInterval(() => {
+  //   dispatch({
+  //     type: 'TICK',
+  //     light: true,
+  //     lastUpdate: Date.now(),
+  //   });
+  // }, 1000);
 
   return (
     <Layout>
-      <Clock />
+      {/* <Clock /> */}
       <Counter />
     </Layout>
   );
