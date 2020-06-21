@@ -12,6 +12,8 @@
     "color-no-invalid-hex": true,
     "declaration-colon-space-after": "always",
     "max-empty-lines": 2,
-    "prettier/prettier": true
+    "prettier/prettier": true,
+    "selector-no-qualifying-type": [true, { "ignore": ["attribute"] }],
+    "max-nesting-depth": null
   }
 }
