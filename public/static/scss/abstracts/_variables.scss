@@ -32,17 +32,20 @@ $color: (
 // --------------------------------------------
 // Typography ---------------------------------
 // --------------------------------------------
-$font__family: (
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&display=swap');
+
+$font-family: (
   base: '"Heebo", sans-serif',
   // font-family(base)
     heading: 'Fira Sans, serif',
   // font-family(heading)
     code: 'Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace',
   // font-family(code)
-    pre: '"Courier 10 Pitch", Courier, monospace' // font-family(pre),,
+    pre: '"Courier 10 Pitch", Courier, monospace',
+  // font-family(pre)
 );
 
-$font__sizes: (
+$font-sizes: (
     alpha: (
       46px,
       56px,
@@ -51,12 +54,12 @@ $font__sizes: (
     beta: (
       40px,
       50px,
-      0px,
+      0,
     ),
     gamma: (
       32px,
       42px,
-      0px,
+      0,
     ),
     delta: (
       22px,
@@ -81,66 +84,69 @@ $font__sizes: (
     theta: (
       14px,
       20px,
-      0px,
+      0,
     ),
   )
   0;
 
-$font__scale: (
+$font-scale: (
   desktop: (
     // i.e. $breakpoint__m + $breakpoint__l (600 - 1024)
-      1: map-get($font__sizes, alpha),
+      1: map-get($font-sizes, alpha),
     // H1
-      2: map-get($font__sizes, beta),
+      2: map-get($font-sizes, beta),
     // H2
-      3: map-get($font__sizes, gamma),
+      3: map-get($font-sizes, gamma),
     // H3
-      4: map-get($font__sizes, delta),
+      4: map-get($font-sizes, delta),
     // H4, H5, H6
-      5: map-get($font__sizes, epsilon),
+      5: map-get($font-sizes, epsilon),
     // Body
-      6: map-get($font__sizes, zeta),
+      6: map-get($font-sizes, zeta),
     // Text small
-      7: map-get($font__sizes, eta),
+      7: map-get($font-sizes, eta),
     // Text smaller
-      8: map-get($font__sizes, theta) // Footer area,,
+      8: map-get($font-sizes, theta),
+    // Footer area
   ),
   mobile: (
     // i.e. $breakpoint__xs + $breakpoint__s (up to 600)
-      1: map-get($font__sizes, beta),
+      1: map-get($font-sizes, beta),
     // H1
-      2: map-get($font__sizes, gamma),
+      2: map-get($font-sizes, gamma),
     // H2
-      3: map-get($font__sizes, delta),
+      3: map-get($font-sizes, delta),
     // H3
-      4: map-get($font__sizes, epsilon),
+      4: map-get($font-sizes, epsilon),
     // H4, H5, H6
-      5: map-get($font__sizes, zeta),
+      5: map-get($font-sizes, zeta),
     // Body
-      6: map-get($font__sizes, zeta),
+      6: map-get($font-sizes, zeta),
     // Text small
-      7: map-get($font__sizes, eta),
+      7: map-get($font-sizes, eta),
     // Text smaller
-      8: map-get($font__sizes, theta) // Footer area,,
+      8: map-get($font-sizes, theta),
+    // Footer area
   ),
 );
 
-$font__weight: (
+$font-weight: (
   regular: 400,
   // font__weight(regular)
     medium: 500,
   // font__weight(medium)
     semibold: 600,
   // font__weight(semi-bold)
-    bold: 700 // font__weight(bold),,
+    bold: 700,
+  // font__weight(bold)
 );
 
 // --------------------------------------------
 // Structure ----------------------------------
 // --------------------------------------------
-$content__padding: (
+$content-padding: (
   mobile: 16px,
   desktop: 24px,
 );
-$container__width: 1080px;
-$container__width-sm: 800px;
+$container-width: 1080px;
+$container-width-sm: 800px;

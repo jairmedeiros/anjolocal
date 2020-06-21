@@ -62,21 +62,21 @@
   margin-bottom: 24px;
 }
 
-.footer-links,
-.footer-social-links {
-  li {
-    + li {
-      margin-left: 16px;
-    }
-  }
-}
-
 .footer-social-links {
   li {
     display: inline-flex;
 
     a {
       padding: 8px;
+    }
+  }
+}
+
+.footer-links,
+.footer-social-links {
+  li {
+    + li {
+      margin-left: 16px;
     }
   }
 }

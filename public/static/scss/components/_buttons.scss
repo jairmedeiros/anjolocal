@@ -3,7 +3,7 @@
   @include font-weight(bold);
 
   background-color: color(bg, 1);
-  border: none;
+  // border: none;
   border-radius: 2px;
   color: color(primary, 1) !important;
   cursor: pointer;
@@ -43,8 +43,9 @@
 
 .button-primary {
   background: color(primary, 1);
-  color: color(typography, 1i) !important;
+  color: color(typography, '1i') !important;
   transition: background 0.15s ease;
+
   &:hover {
     background: darken(color(primary, 1), 2%);
   }
