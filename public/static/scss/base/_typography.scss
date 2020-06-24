@@ -162,10 +162,10 @@ pre .h6 {
 // }
 
 .text-light {
-  color: color(typography, '2i');
+  color: color(typography, 2i);
 
   a {
-    color: color(typography, '2i');
+    color: color(typography, 2i);
   }
 
   h1,
@@ -180,7 +180,7 @@ pre .h6 {
   .h4,
   .h5,
   .h6 {
-    color: color(typography, '1i') !important;
+    color: color(typography, 1i) !important;
   }
 }
 
