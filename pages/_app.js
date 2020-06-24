@@ -7,6 +7,8 @@ import Head from 'next/head';
 import { useStore } from '../src/Redux';
 import { useApollo } from '../src/Apollo';
 
+import '../public/static/scss/style.scss';
+
 export default function App({ Component, pageProps }) {
   const store = useStore(pageProps.initialReduxState);
   const apolloClient = useApollo(pageProps.initialApolloState);
