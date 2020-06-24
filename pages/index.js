@@ -24,6 +24,7 @@ const IndexPage = () => {
   //   });
   // }, 1000);
 
+  // TODO: Tranformar useEffect em metodo generico para qualquer tipo de import.
   useEffect(() => {
     const script = document.createElement('script');
 
