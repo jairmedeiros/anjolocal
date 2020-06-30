@@ -10,7 +10,7 @@
 // import Submit from '../src/Components/Submit';
 // import PostList, { ALL_POSTS_QUERY, allPostsQueryVars } from '../src/Components/PostList';
 
-import React, { useEffect } from 'react';
+import { useScript } from '../src/Helpers/Hooks';
 
 const IndexPage = () => {
   // Tick the time every second
@@ -24,15 +24,7 @@ const IndexPage = () => {
   //   });
   // }, 1000);
 
-  // TODO: Tranformar useEffect em metodo generico para qualquer tipo de import.
-  useEffect(() => {
-    const script = document.createElement('script');
-
-    script.src = '/static/js/main.js';
-    script.async = true;
-
-    document.body.appendChild(script);
-  }, []);
+  useScript('/static/js/main.js');
 
   return (
     <div className="body-wrap boxed-container">
