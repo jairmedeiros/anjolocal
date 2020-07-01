@@ -1,6 +1,24 @@
-.site-header {
+.header-background-elements {
   padding: 24px 0;
   position: relative;
+}
+
+.site-header {
+  @include shadow-sm;
+
+  align-items: center;
+  background: #fff;
+  height: 80px;
+  position: fixed;
+  width: 100%;
+  z-index: 100000;
+}
+
+.site-header-inner {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
 }
 
 .header-shape {
@@ -14,15 +32,15 @@
 
 .header-shape-2 {
   right: -53px;
-  top: -40px;
+  top: -25px;
 }
 
-.site-header-inner {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  position: relative; /* To display all elements above the background color */
-}
+// .header-elements-inner {
+//   align-items: center;
+//   display: flex;
+//   justify-content: space-between;
+//   position: relative; /* To display all elements above the background color */
+// }
 
 .header-links {
   display: inline-flex;
