@@ -27,7 +27,7 @@ const IndexPage = () => {
   useScript('/static/js/main.js');
 
   return (
-    <div className="body-wrap boxed-container">
+    <div className="body-wrap">
       <header className="site-header">
         <div className="header-shape header-shape-1">
           <svg width={337} height={222} viewBox="0 0 337 222" xmlns="http://www.w3.org/2000/svg">

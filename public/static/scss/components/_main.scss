@@ -12,12 +12,12 @@
   overflow: hidden;
 }
 
-.boxed-container {
-  @include shadow;
+// .boxed-container {
+//   @include shadow;
 
-  margin: 0 auto;
-  max-width: 1440px;
-}
+//   margin: 0 auto;
+//   max-width: 1440px;
+// }
 
 main {
   flex: 1 0 auto;
