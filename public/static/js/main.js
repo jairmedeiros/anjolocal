@@ -10,7 +10,7 @@
     window.sr = ScrollReveal();
     const { sr } = window;
 
-    sr.reveal('.feature, .testimonial', {
+    sr.reveal('.feature, .institution', {
       duration: 600,
       distance: '50px',
       easing: 'cubic-bezier(0.5, -0.01, 0, 1.005)',

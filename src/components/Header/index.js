@@ -1,4 +1,5 @@
 import './styles.scss';
+import Button from '../common/Button';
 
 const Header = () => {
   return (
@@ -68,9 +69,9 @@ const Header = () => {
               </h1>
             </div>
             <div className="header-right-elements">
-              <a className="button button-primary button-block button-shadow" href="#">
+              <Button majorStyle="primary" url="#" useShadow>
                 Early access
-              </a>
+              </Button>
             </div>
           </div>
         </div>

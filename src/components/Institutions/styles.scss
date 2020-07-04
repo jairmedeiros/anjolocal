@@ -1,4 +1,6 @@
-.testimonials {
+@import '../../../public/static/scss/style';
+
+.institutions {
   position: relative;
 
   .section-inner {
@@ -11,25 +13,25 @@
   }
 }
 
-.testimonials-shape {
+.institutions-shape {
   position: absolute;
 }
 
-.testimonials-shape-1 {
+.institutions-shape-1 {
   bottom: 52px;
   left: calc(50% - 80px);
 }
 
-.testimonials-shape-2 {
+.institutions-shape-2 {
   left: calc(50% + 30px);
   top: 84px;
 }
 
-.testimonials-shape-3 {
+.institutions-shape-3 {
   display: none;
 }
 
-.testimonials-wrap {
+.institutions-wrap {
   display: flex;
   flex-wrap: wrap;
   // align-items: flex-start; // disables equal height boxes
@@ -46,7 +48,7 @@
   }
 }
 
-.testimonial {
+.institution {
   flex-grow: 1;
   max-width: 388px;
   padding: 44px 16px 16px;
@@ -54,7 +56,7 @@
   width: 388px;
 }
 
-.testimonial-inner {
+.institution-inner {
   background: color(bg, 1);
   display: flex;
   flex-wrap: wrap;
@@ -79,11 +81,11 @@
   }
 }
 
-.testimonial-main {
+.institution-main {
   position: relative;
 }
 
-.testimonial-header {
+.institution-header {
   position: absolute;
   top: -80px;
 
@@ -96,11 +98,11 @@
   }
 }
 
-// .testimonial-footer {
+// .institution-footer {
 //   align-self: flex-end;
 // }
 
-.testimonial-footer {
+.institution-footer {
   @include font-weight(medium);
 
   align-self: flex-end;
@@ -108,7 +110,7 @@
 }
 
 @include media('>medium') {
-  .testimonials {
+  .institutions {
     .section-inner {
       padding-bottom: 166px; /* 126+40px second column offset */
     }
@@ -118,7 +120,7 @@
     }
   }
 
-  .testimonials-wrap {
+  .institutions-wrap {
     margin-left: -24px;
     margin-right: -24px;
 
@@ -131,11 +133,11 @@
     }
   }
 
-  .testimonial {
+  .institution {
     padding: 52px 24px 24px;
   }
 
-  .testimonials-shape-1 {
+  .institutions-shape-1 {
     bottom: auto;
     left: calc(50% - 305px);
     top: 170px;
@@ -146,12 +148,12 @@
     }
   }
 
-  .testimonials-shape-2 {
+  .institutions-shape-2 {
     left: calc(50% + 190px);
     top: 480px;
   }
 
-  .testimonials-shape-3 {
+  .institutions-shape-3 {
     display: block;
     left: calc(50% - 320px);
     top: 570px;
@@ -159,7 +161,7 @@
 }
 
 @include media('>large') {
-  .testimonial {
+  .institution {
     &:nth-child(odd) {
       top: 40px;
     }
