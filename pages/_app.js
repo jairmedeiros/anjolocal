@@ -4,8 +4,7 @@
 import { ApolloProvider } from '@apollo/react-hooks';
 import { Provider } from 'react-redux';
 import Head from 'next/head';
-import { useStore } from '../src/Redux';
-import { useApollo } from '../src/Apollo';
+import { useStore, useApollo } from '../src';
 
 import '../public/static/scss/style.scss';
 

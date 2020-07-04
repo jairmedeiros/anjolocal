@@ -1,12 +1,12 @@
 import { useMemo } from 'react';
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import reducers from './reducers';
+import rootReducer from './rootReducer';
 
 let store;
 
 function initStore(preloadedState = {}) {
-  return createStore(reducers, preloadedState, composeWithDevTools(applyMiddleware()));
+  return createStore(rootReducer, preloadedState, composeWithDevTools(applyMiddleware()));
 }
 
 export const initializeStore = (preloadedState) => {

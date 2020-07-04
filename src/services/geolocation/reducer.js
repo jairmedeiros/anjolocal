@@ -4,7 +4,7 @@ const initialState = {
   count: 0,
 };
 
-const locationReducer = (state = initialState, action) => {
+const geolocationReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'TICK':
       return {
@@ -32,4 +32,4 @@ const locationReducer = (state = initialState, action) => {
   }
 };
 
-export default locationReducer;
+export default geolocationReducer;
