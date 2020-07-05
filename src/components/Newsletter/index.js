@@ -1,5 +1,4 @@
 import './styles.scss';
-import Button from '../common/Button';
 
 const Newsletter = () => {
   return (
@@ -7,21 +6,17 @@ const Newsletter = () => {
       <div className="container-sm">
         <div className="newsletter-inner section-inner">
           <div className="newsletter-header text-center">
-            <h2 className="section-title mt-0">Stay in the know</h2>
+            <h2 className="section-title mt-0">Gostou do que viu?</h2>
             <p className="section-paragraph">
-              Lorem ipsum is common placeholder text used to demonstrate the graphic elements of a
-              document or visual presentation.
+              Nosso objetivo é ser uma plataforma de doações independente, autossuficiente e
+              personalizada para informar instituições que precisam de doação com base na sua
+              localização!
             </p>
-          </div>
-          <div className="footer-form newsletter-form field field-grouped">
-            <div className="control control-expanded">
-              <input className="input" type="email" name="email" placeholder="Digite seu email…" />
-            </div>
-            <div className="control">
-              <Button majorStyle="primary" url="#" useShadow>
-                Me avise!
-              </Button>
-            </div>
+            <p className="section-paragraph">
+              Queremos ser a ponte facilitadora entre instituições que almejam mudar o mundo de
+              pessoas que buscam esta mudança.
+            </p>
+            <h3 className="section-title mt-0">contato@anjolocal.com.br</h3>
           </div>
         </div>
       </div>

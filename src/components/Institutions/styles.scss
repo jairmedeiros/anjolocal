@@ -106,6 +106,8 @@
   @include font-weight(medium);
 
   align-self: flex-end;
+  display: flex;
+  flex-direction: row-reverse;
   margin-bottom: 12px;
 }
 

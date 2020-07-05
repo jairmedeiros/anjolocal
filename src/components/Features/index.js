@@ -7,10 +7,10 @@ const Features = () => {
         <div className="features-inner section-inner">
           <div className="features-header text-center">
             <div className="container-sm">
-              <h2 className="section-title mt-0">Meet April</h2>
+              <h2 className="section-title mt-0">Como funciona o Anjolocal?</h2>
               <p className="section-paragraph">
-                Lorem ipsum is common placeholder text used to demonstrate the graphic elements of a
-                document or visual presentation.
+                Nosso sistema possui várias alternativas de utilização para que você encontre várias
+                instituições, além de cadastra-las em nosso banco de dados.
               </p>
             </div>
           </div>
@@ -28,10 +28,10 @@ const Features = () => {
                     </g>
                   </svg>
                 </div>
-                <h4 className="feature-title h3-mobile mb-8">Powerful</h4>
+                <h4 className="feature-title h3-mobile mb-8">Pesquisa eficiente</h4>
                 <p className="text-sm">
-                  A pseudo-Latin text used in web design, layout, and printing in place of English
-                  to emphasise design elements.
+                  Aqui no site é possível buscar instituições pelo seu nome, bairro, cidade e/ou
+                  estado. <strong>Teste agora!</strong>
                 </p>
               </div>
             </div>
@@ -51,10 +51,10 @@ const Features = () => {
                     </g>
                   </svg>
                 </div>
-                <h4 className="feature-title h3-mobile mb-8">Powerful</h4>
+                <h4 className="feature-title h3-mobile mb-8">Bots e Chatbots</h4>
                 <p className="text-sm">
-                  A pseudo-Latin text used in web design, layout, and printing in place of English
-                  to emphasise design elements.
+                  Desenvolvemos bots que estão presentes no Facebook Messenger, Telegram e Twitter.
+                  Mande um &quot;Oi!&quot; para nós agora e tenha um conteúdo personalizado.
                 </p>
               </div>
             </div>
@@ -75,10 +75,10 @@ const Features = () => {
                     </g>
                   </svg>
                 </div>
-                <h4 className="feature-title h3-mobile mb-8">Powerful</h4>
+                <h4 className="feature-title h3-mobile mb-8">Newsletter</h4>
                 <p className="text-sm">
-                  A pseudo-Latin text used in web design, layout, and printing in place of English
-                  to emphasise design elements.
+                  Possuímos uma newsletter, onde você receberá toda semana informações sobre novas
+                  instituições e conteúdos exclusivos.
                 </p>
               </div>
             </div>
@@ -98,10 +98,11 @@ const Features = () => {
                     </g>
                   </svg>
                 </div>
-                <h4 className="feature-title h3-mobile mb-8">Powerful</h4>
+                <h4 className="feature-title h3-mobile mb-8">Cadastro seguro</h4>
                 <p className="text-sm">
-                  A pseudo-Latin text used in web design, layout, and printing in place of English
-                  to emphasise design elements.
+                  Para estar presente em nosso banco de dados, basta clicar no botão{' '}
+                  <i>&quot;Preciso de doação&quot;</i>. Cadastrando o CPNJ garantirá, uma maior
+                  visibilidade em nossas listas.
                 </p>
               </div>
             </div>

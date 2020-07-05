@@ -62,7 +62,7 @@ const Institutions = () => {
       </div>
       <div className="container">
         <div className="institutions-inner section-inner">
-          <h2 className="section-title mt-0 text-center">institutions</h2>
+          <h2 className="section-title mt-0 text-center">Algumas das instituições presentes</h2>
           <div className="institutions-wrap">
             <div className="institution text-xs is-revealing">
               <div className="institution-inner">
@@ -83,7 +83,7 @@ const Institutions = () => {
                 </div>
                 <div className="institution-footer">
                   <div className="institution-link">
-                    <a href="#">@martajones</a>
+                    <a href="#">Ver mais +</a>
                   </div>
                 </div>
               </div>
