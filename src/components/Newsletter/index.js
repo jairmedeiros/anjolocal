@@ -15,11 +15,11 @@ const Newsletter = () => {
           </div>
           <div className="footer-form newsletter-form field field-grouped">
             <div className="control control-expanded">
-              <input className="input" type="email" name="email" placeholder="Your best email…" />
+              <input className="input" type="email" name="email" placeholder="Digite seu email…" />
             </div>
             <div className="control">
               <Button majorStyle="primary" url="#" useShadow>
-                Early access
+                Me avise!
               </Button>
             </div>
           </div>

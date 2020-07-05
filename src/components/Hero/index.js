@@ -7,18 +7,23 @@ const Hero = () => {
       <div className="container">
         <div className="hero-inner">
           <div className="hero-copy">
-            <h1 className="hero-title mt-0">Landing template for startups</h1>
+            <h1 className="hero-title mt-0">Seja a esperança de alguém</h1>
             <p className="hero-paragraph">
-              Our landing page template works on all devices, so you only have to set it up once,
-              and get beautiful results forever.
+              Localize instituições em nosso site, utilize de nossos bots ou newsletter. Vamos lhe
+              avisar ou listar instituições que precisam de você!
             </p>
             <div className="hero-form field field-grouped">
               <div className="control control-expanded">
-                <input className="input" type="email" name="email" placeholder="Your best email…" />
+                <input
+                  className="input"
+                  type="email"
+                  name="email"
+                  placeholder="Digite seu email…"
+                />
               </div>
               <div className="control">
                 <Button majorStyle="primary" url="#" useShadow>
-                  Early access
+                  Me avise!
                 </Button>
               </div>
             </div>
