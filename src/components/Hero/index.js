@@ -94,8 +94,8 @@ const Hero = () => {
                     y2="96.586%"
                     id="hero-illustration-c"
                   >
-                    <stop stopColor="#1ADAB7" offset="0%" />
-                    <stop stopColor="#55EBD0" offset="100%" />
+                    <stop stopColor="#2c858d" offset="0%" />
+                    <stop stopColor="#35a6b0" offset="100%" />
                   </linearGradient>
                   <filter
                     x="-13%"
