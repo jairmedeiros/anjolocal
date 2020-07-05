@@ -7,8 +7,8 @@ const Institutions = () => {
         <svg width={280} height={280} viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient x1="100%" y1="0%" x2="0%" y2="100%" id="institutions-shape-1">
-              <stop stopColor="#261FB6" offset="0%" />
-              <stop stopColor="#4950F6" offset="100%" />
+              <stop stopColor="#c54c82" offset="0%" />
+              <stop stopColor="#a94caf" offset="100%" />
             </linearGradient>
           </defs>
           <circle

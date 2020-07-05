@@ -69,8 +69,8 @@ const Hero = () => {
               >
                 <defs>
                   <linearGradient x1="100%" y1="0%" x2="0%" y2="100%" id="hero-illustration-a">
-                    <stop stopColor="#261FB6" offset="0%" />
-                    <stop stopColor="#4950F6" offset="100%" />
+                    <stop stopColor="#c54c82" offset="0%" />
+                    <stop stopColor="#a94caf" offset="100%" />
                   </linearGradient>
                   <linearGradient
                     x1="89.764%"
@@ -132,7 +132,7 @@ const Hero = () => {
                     id="hero-illustration-h"
                   >
                     <stop stopColor="#55EBD0" offset="0%" />
-                    <stop stopColor="#4950F6" offset="100%" />
+                    <stop stopColor="#a94caf" offset="100%" />
                   </linearGradient>
                   <path id="hero-illustration-j" d="M0 0h308v288H0z" />
                   <filter
@@ -270,7 +270,7 @@ const Hero = () => {
                     className="anime-element stroke-animation"
                     d="M600,300 C600,465.685425 465.685425,600 300,600 C134.314575,600 1.3749042e-14,465.685425 3.60373576e-15,300 C-6.54157051e-15,134.314575 134.314575,-1.29473326e-14 300,-2.30926389e-14 C465.685425,-3.32379452e-14 600,134.314575 600,300 Z"
                     fill="url(#hero-illustration-a)"
-                    stroke="#4950F6"
+                    stroke="#a94caf"
                   />
                   <g transform="translate(435 518)">
                     <circle
@@ -292,7 +292,7 @@ const Hero = () => {
                     <g transform="translate(103 75)">
                       <path
                         fillOpacity=".24"
-                        fill="#11103E"
+                        fill="#271329"
                         filter="url(#hero-illustration-d)"
                         d="M32 410h736v64H32z"
                       />
@@ -490,7 +490,7 @@ const Hero = () => {
                       <text
                         fontFamily="AppleColorEmoji, Apple Color Emoji"
                         fontSize={19}
-                        fill="#11103E"
+                        fill="#271329"
                         transform="translate(28 221)"
                       >
                         <tspan x="17" y="36">
@@ -510,7 +510,7 @@ const Hero = () => {
                       <text
                         fontFamily="AppleColorEmoji, Apple Color Emoji"
                         fontSize={16}
-                        fill="#11103E"
+                        fill="#271329"
                         transform="translate(325 257)"
                       >
                         <tspan x="13" y="31">
