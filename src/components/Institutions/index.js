@@ -83,6 +83,7 @@ const Institutions = () => {
                 </div>
                 <div className="institution-footer">
                   <div className="institution-link">
+                    <span>Recife-PE</span>
                     <a href="#">Ver mais +</a>
                   </div>
                 </div>
@@ -107,7 +108,8 @@ const Institutions = () => {
                 </div>
                 <div className="institution-footer">
                   <div className="institution-link">
-                    <a href="#">@michealpahm</a>
+                    <span>Recife-PE</span>
+                    <a href="#">Ver mais +</a>
                   </div>
                 </div>
               </div>
@@ -131,7 +133,8 @@ const Institutions = () => {
                 </div>
                 <div className="institution-footer">
                   <div className="institution-link">
-                    <a href="#">@markbrown</a>
+                    <span>Recife-PE</span>
+                    <a href="#">Ver mais +</a>
                   </div>
                 </div>
               </div>

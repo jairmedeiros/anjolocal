@@ -75,6 +75,7 @@
     content: '';
     left: 0;
     mix-blend-mode: multiply;
+    pointer-events: none;
     position: absolute;
     right: 0;
     top: 0;
@@ -105,10 +106,13 @@
 .institution-footer {
   @include font-weight(medium);
 
-  align-self: flex-end;
+  margin: 10px 0;
+}
+
+.institution-link {
   display: flex;
-  flex-direction: row-reverse;
-  margin-bottom: 12px;
+  flex-grow: 1;
+  justify-content: space-between;
 }
 
 @include media('>medium') {
