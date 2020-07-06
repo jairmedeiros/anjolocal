@@ -11,7 +11,7 @@
 // import PostList, { ALL_POSTS_QUERY, allPostsQueryVars } from '../src/Components/PostList';
 
 import { useScript } from '../src/utils/hooks';
-import { Header, Features, Hero, Footer, Institutions, Newsletter } from '../src/components';
+import { Header, Features, Hero, Footer, Institutions } from '../src/components';
 
 const IndexPage = () => {
   // Tick the time every second
@@ -34,7 +34,6 @@ const IndexPage = () => {
         <Hero />
         <Features />
         <Institutions />
-        <Newsletter />
       </main>
       <Footer />
     </div>
