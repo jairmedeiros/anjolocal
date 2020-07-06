@@ -9,8 +9,8 @@ const Features = () => {
             <div className="container-sm">
               <h2 className="section-title mt-0">Como funciona o Anjolocal?</h2>
               <p className="section-paragraph">
-                Nosso sistema possui várias alternativas de utilização para que você encontre várias
-                instituições, além de cadastra-las em nosso banco de dados.
+                Nosso sistema possui várias alternativas de utilização para que você encontre
+                diversas instituições, além de cadastra-las em nosso banco de dados.
               </p>
             </div>
           </div>
@@ -31,7 +31,7 @@ const Features = () => {
                 <h4 className="feature-title h3-mobile mb-8">Pesquisa eficiente</h4>
                 <p className="text-sm">
                   Aqui no site é possível buscar instituições pelo seu nome, bairro, cidade e/ou
-                  estado. <strong>Teste agora!</strong>
+                  estado.
                 </p>
               </div>
             </div>
@@ -101,7 +101,7 @@ const Features = () => {
                 <h4 className="feature-title h3-mobile mb-8">Cadastro seguro</h4>
                 <p className="text-sm">
                   Para estar presente em nosso banco de dados, basta clicar no botão{' '}
-                  <i>&quot;Preciso de doação&quot;</i>. Cadastrando o CPNJ garantirá, uma maior
+                  <i>&quot;Preciso de doação&quot;</i>. Cadastrando o CNPJ garantirá, uma maior
                   visibilidade em nossas listas.
                 </p>
               </div>
