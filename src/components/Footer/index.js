@@ -83,16 +83,15 @@ const Footer = () => {
           </div>
           <ul className="footer-links list-reset">
             <li>
-              <a href="#">Contact</a>
+              <a href="#">Quem somos</a>
             </li>
             <li>
-              <a href="#">About us</a>
+              <a href="#">Tecnologias utilizadas</a>
             </li>
             <li>
-              <a href="#">FAQ&#39;s</a>
-            </li>
-            <li>
-              <a href="#">Support</a>
+              <a href="#">
+                <strong>Colabore com a gente!</strong>
+              </a>
             </li>
           </ul>
           <ul className="footer-social-links list-reset">
@@ -130,7 +129,7 @@ const Footer = () => {
               </a>
             </li>
           </ul>
-          <div className="footer-copyright">© 2018 April, all rights reserved</div>
+          <div className="footer-copyright">© 2020 Anjolocal</div>
         </div>
       </div>
     </footer>
