@@ -66,8 +66,8 @@ const Features = () => {
                 </div>
                 <h4 className="feature-title h3-mobile mb-8">Cadastro seguro</h4>
                 <p className="text-sm">
-                  Possuímos um sistema integrado que identifica instituições que informaram CPNJ e
-                  imagens, proporcinando uma maior segurança.
+                  Possuímos um sistema integrado que identifica instituições que cadastraram
+                  informações mais detalhadas, proporcinando uma maior segurança.
                 </p>
               </div>
             </div>
