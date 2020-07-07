@@ -67,7 +67,7 @@ const Features = () => {
                 <h4 className="feature-title h3-mobile mb-8">Cadastro seguro</h4>
                 <p className="text-sm">
                   Possuímos um sistema integrado que identifica instituições que cadastraram
-                  informações mais detalhadas, proporcionando uma maior segurança.
+                  informações mais detalhadas, proporcionando maior segurança.
                 </p>
               </div>
             </div>
