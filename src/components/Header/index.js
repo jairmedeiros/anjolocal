@@ -70,7 +70,7 @@ const Header = () => {
             </div>
             <div className="header-right-elements">
               <Button majorStyle="primary" url="#" useShadow>
-                Preciso de doação
+                Cadastrar instituição
               </Button>
             </div>
           </div>
