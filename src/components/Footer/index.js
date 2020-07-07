@@ -129,7 +129,10 @@ const Footer = () => {
               </a>
             </li>
           </ul>
-          <div className="footer-copyright">© 2020 Anjolocal</div>
+          <div className="footer-copyright">
+            Copyright © 2020 Anjolocal | Template original por&nbsp;{' '}
+            <a href="https://cruip.com/april/">Cruip</a>
+          </div>
         </div>
       </div>
     </footer>
