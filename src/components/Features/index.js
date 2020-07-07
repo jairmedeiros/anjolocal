@@ -39,7 +39,7 @@ const Features = () => {
                 <h4 className="feature-title h3-mobile mb-8">Bots e Chatbots</h4>
                 <p className="text-sm">
                   Desenvolvemos bots que estão presentes no Facebook Messenger, Telegram e Twitter.
-                  Mande um &quot;Oi!&quot; para nós agora e tenha um conteúdo personalizado.
+                  Converse com a gente ou acompanhe nossas atualizações.
                 </p>
               </div>
             </div>
@@ -66,9 +66,8 @@ const Features = () => {
                 </div>
                 <h4 className="feature-title h3-mobile mb-8">Cadastro seguro</h4>
                 <p className="text-sm">
-                  Para estar presente em nosso banco de dados, basta clicar no botão{' '}
-                  <i>&quot;Preciso de doação&quot;</i>. Cadastrando o CNPJ garantirá, uma maior
-                  visibilidade em nossas listas.
+                  Possuímos um sistema integrado que identifica instituições que informaram CPNJ e
+                  imagens, proporcinando uma maior segurança.
                 </p>
               </div>
             </div>
