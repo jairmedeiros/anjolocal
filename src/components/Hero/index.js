@@ -9,8 +9,8 @@ const Hero = () => {
           <div className="hero-copy">
             <h1 className="hero-title mt-0">Seja a esperança de alguém</h1>
             <p className="hero-paragraph">
-              Localize instituições em nosso site, utilize de nossos bots ou newsletter. Conheça
-              instituições que precisam de você!
+              Localize instituições em nosso site, utilize nossos bots ou assine nossa newsletter.
+              Conheça instituições que precisam de você!
             </p>
             <div className="hero-form field field-grouped">
               <div className="control control-expanded">
@@ -23,7 +23,7 @@ const Hero = () => {
               </div>
               <div className="control">
                 <Button majorStyle="primary" url="#" useShadow>
-                  Me avise!
+                  Assinar
                 </Button>
               </div>
             </div>
