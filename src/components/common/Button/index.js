@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import './styles.scss';
 import PropTypes from 'prop-types';
 
