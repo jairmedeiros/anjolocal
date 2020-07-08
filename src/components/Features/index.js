@@ -1,6 +1,6 @@
 import './styles.scss';
 
-const Features = () => {
+function Features() {
   return (
     <section className="features section">
       <div className="container">
@@ -76,6 +76,6 @@ const Features = () => {
       </div>
     </section>
   );
-};
+}
 
 export default Features;

@@ -1,6 +1,6 @@
 import './styles.scss';
 
-const Footer = () => {
+function Footer() {
   return (
     <footer className="site-footer">
       <div className="section text-light container-sm">
@@ -181,6 +181,6 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
+}
 
 export default Footer;

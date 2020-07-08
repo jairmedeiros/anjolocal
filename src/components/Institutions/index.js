@@ -1,6 +1,6 @@
 import './styles.scss';
 
-const Institutions = () => {
+function Institutions() {
   return (
     <section className="institutions section">
       <div className="institutions-shape institutions-shape-1">
@@ -144,6 +144,6 @@ const Institutions = () => {
       </div>
     </section>
   );
-};
+}
 
 export default Institutions;

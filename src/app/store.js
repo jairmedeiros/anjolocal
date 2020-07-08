@@ -9,7 +9,7 @@ function initStore(preloadedState = {}) {
   return createStore(rootReducer, preloadedState, composeWithDevTools(applyMiddleware()));
 }
 
-export const initializeStore = (preloadedState) => {
+function initializeStore(preloadedState) {
   let storeFetched = store ?? initStore(preloadedState);
 
   // After navigating to a page with an initial Redux state, merge that state
@@ -29,9 +29,11 @@ export const initializeStore = (preloadedState) => {
   if (!store) store = storeFetched;
 
   return storeFetched;
-};
+}
 
-export function useStore(initializeState) {
+function useStore(initializeState) {
   const storeInitialized = useMemo(() => initializeStore(initializeState), [initializeState]);
   return storeInitialized;
 }
+
+export { initializeStore, useStore };

@@ -2,7 +2,7 @@
 import './styles.scss';
 import PropTypes from 'prop-types';
 
-const Button = ({ majorStyle, url, useShadow, children }) => {
+function Button({ majorStyle, url, useShadow, children }) {
   let currentStyle = `button button-block button-${majorStyle}`;
 
   if (useShadow) {
@@ -14,7 +14,7 @@ const Button = ({ majorStyle, url, useShadow, children }) => {
       {children}
     </a>
   );
-};
+}
 
 Button.propTypes = {
   majorStyle: PropTypes.string.isRequired,

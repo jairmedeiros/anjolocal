@@ -1,7 +1,7 @@
 import './styles.scss';
 import Button from '../common/Button';
 
-const Header = () => {
+function Header() {
   return (
     <>
       <header className="site-header">
@@ -126,6 +126,6 @@ const Header = () => {
       </div>
     </>
   );
-};
+}
 
 export default Header;

@@ -1,7 +1,7 @@
 import './styles.scss';
 import Button from '../common/Button';
 
-const Hero = () => {
+function Hero() {
   return (
     <section className="hero">
       <div className="container">
@@ -308,6 +308,6 @@ const Hero = () => {
       </div>
     </section>
   );
-};
+}
 
 export default Hero;

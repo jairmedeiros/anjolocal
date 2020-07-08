@@ -8,7 +8,7 @@ import { useStore, useApollo } from '../src';
 
 import '../public/static/scss/style.scss';
 
-export default function App({ Component, pageProps }) {
+function App({ Component, pageProps }) {
   const store = useStore(pageProps.initialReduxState);
   const apolloClient = useApollo(pageProps.initialApolloState);
 
@@ -29,3 +29,5 @@ export default function App({ Component, pageProps }) {
     </Provider>
   );
 }
+
+export default App;

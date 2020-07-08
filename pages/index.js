@@ -13,7 +13,7 @@
 import { useScript } from '../src/utils/hooks';
 import { Header, Features, Hero, Footer, Institutions } from '../src/components';
 
-const IndexPage = () => {
+function Index() {
   // Tick the time every second
   // const dispatch = useDispatch();
 
@@ -38,7 +38,7 @@ const IndexPage = () => {
       <Footer />
     </div>
   );
-};
+}
 
 // export async function getStaticProps() {
 //   const reduxStore = initializeStore();
@@ -65,4 +65,4 @@ const IndexPage = () => {
 //   };
 // }
 
-export default IndexPage;
+export default Index;
