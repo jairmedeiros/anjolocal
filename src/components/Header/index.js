@@ -1,5 +1,6 @@
 import './styles.scss';
 import Button from '../common/Button';
+import { SearchBar } from './components';
 
 function Header() {
   return (
@@ -68,6 +69,7 @@ function Header() {
                 </a>
               </h1>
             </div>
+            <SearchBar />
             <div className="header-right-elements">
               <Button majorStyle="primary" url="#" useShadow>
                 Cadastrar instituição

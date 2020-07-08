@@ -3,10 +3,13 @@ import './styles.scss';
 import PropTypes from 'prop-types';
 
 function Button({ majorStyle, url, useShadow, children }) {
-  let currentStyle = `button button-block button-${majorStyle}`;
+  let currentStyle = '';
+  if (majorStyle) {
+    currentStyle = `button button-block button-${majorStyle} `;
+  }
 
   if (useShadow) {
-    currentStyle += ' button-shadow';
+    currentStyle += 'button-shadow';
   }
 
   return (
@@ -17,13 +20,14 @@ function Button({ majorStyle, url, useShadow, children }) {
 }
 
 Button.propTypes = {
-  majorStyle: PropTypes.string.isRequired,
+  majorStyle: PropTypes.string,
   url: PropTypes.string.isRequired,
   useShadow: PropTypes.bool,
   children: PropTypes.node,
 };
 
 Button.defaultProps = {
+  majorStyle: null,
   children: null,
   useShadow: false,
 };
