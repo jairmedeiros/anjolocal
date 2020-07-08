@@ -27,7 +27,7 @@ class Hamburger extends Component {
 
     return (
       <button
-        className={`hamburger hamburger--squeeze $this.state.active${active}`}
+        className={`hamburger hamburger--spring $this.state.active${active}`}
         type="button"
         onClick={this.handleClick}
       >
