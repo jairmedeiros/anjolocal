@@ -1,5 +1,5 @@
 import './styles.scss';
-import { Button, Hamburger } from '../common';
+import { Button, Hamburger, HamburgerUtils } from '../common';
 import { SearchBar } from './components';
 
 function Header() {
@@ -77,7 +77,7 @@ function Header() {
                 </Button>
               </div>
             </div>
-            <Hamburger />
+            <Hamburger animation={HamburgerUtils.spring.normal} />
           </div>
         </div>
       </header>

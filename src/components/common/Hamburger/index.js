@@ -1,11 +1,13 @@
 import './styles.scss';
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import HamburgerUtils from './utils';
 
 class Hamburger extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      active: '',
+      active: null,
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -15,8 +17,8 @@ class Hamburger extends Component {
     e.preventDefault();
     const { active } = this.state;
 
-    if (active.length > 0) {
-      this.setState({ active: '' });
+    if (active) {
+      this.setState({ active: null });
     } else {
       this.setState({ active: ' is-active' });
     }
@@ -24,12 +26,15 @@ class Hamburger extends Component {
 
   render() {
     const { active } = this.state;
+    const { animation } = this.props;
 
     return (
       <button
-        className={`hamburger hamburger--spring $this.state.active${active}`}
+        className={`hamburger hamburger--${animation} $this.state.active${active}`}
         type="button"
         onClick={this.handleClick}
+        aria-label="Menu"
+        aria-expanded={active}
       >
         <span className="hamburger-box">
           <span className="hamburger-inner" />
@@ -39,4 +44,10 @@ class Hamburger extends Component {
   }
 }
 
-export default Hamburger;
+Hamburger.propTypes = {
+  animation: PropTypes.string.isRequired,
+};
+
+Hamburger.defaultProps = {};
+
+export { Hamburger, HamburgerUtils };

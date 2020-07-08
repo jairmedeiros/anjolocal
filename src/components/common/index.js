@@ -1,4 +1,4 @@
 import Button from './Button';
-import Hamburger from './Hamburger';
+import { Hamburger, HamburgerUtils } from './Hamburger';
 
-export { Button, Hamburger };
+export { Button, Hamburger, HamburgerUtils };
