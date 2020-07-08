@@ -172,7 +172,7 @@ function Footer() {
             </li>
           </ul>
           <div className="footer-copyright">
-            Copyright © 2020 Anjolocal | Template original por&nbsp;{' '}
+            © 2020 Anjolocal | Template original por&nbsp;{' '}
             <a href="https://cruip.com/april/" target="_blank" rel="noreferrer">
               Cruip
             </a>
