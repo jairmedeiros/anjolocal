@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/react-hooks';
 import { NetworkStatus } from 'apollo-client';
 import gql from 'graphql-tag';
-import ErrorMessage from './ErrorMessage';
+// import ErrorMessage from './ErrorMessage';
 import PostUpvoter from './PostUpvoter';
 
 export const ALL_POSTS_QUERY = gql`
@@ -24,7 +24,7 @@ export const allPostsQueryVars = {
 };
 
 export default function PostList() {
-  const { loading, error, data, fetchMore, networkStatus } = useQuery(ALL_POSTS_QUERY, {
+  const { loading, data, fetchMore, networkStatus } = useQuery(ALL_POSTS_QUERY, {
     variables: allPostsQueryVars,
     // Setting this value to true will make the component rerender when
     // the "networkStatus" changes, so we are able to know if it is fetching
@@ -34,7 +34,7 @@ export default function PostList() {
 
   const loadingMorePosts = networkStatus === NetworkStatus.fetchMore;
 
-  if (error) return <ErrorMessage message="Error loading posts." />;
+  // if (error) return <ErrorMessage message="Error loading posts." />;
   if (loading && !loadingMorePosts) return <div>Loading</div>;
 
   const { allPosts, _allPostsMeta } = data;
