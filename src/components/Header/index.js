@@ -1,5 +1,6 @@
 import './styles.scss';
-import { Button, Hamburger, HamburgerUtils } from '../common';
+import { Button, Hamburger } from '../common';
+import { SPRING } from '../common/Hamburger/animations';
 import { SearchBar } from './components';
 
 function Header() {
@@ -75,7 +76,7 @@ function Header() {
                 Cadastrar instituição
               </Button>
             </div>
-            <Hamburger animation={HamburgerUtils.spring.normal} />
+            <Hamburger animation={SPRING.normal} />
           </div>
         </div>
         <div className="container header-small-content">

@@ -1,53 +1,41 @@
 import './styles.scss';
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import HamburgerUtils from './utils';
+import { useSelector, useDispatch } from 'react-redux';
+import { activeHamburger, desactiveHamburger } from './actions';
 
-class Hamburger extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      active: null,
-    };
-
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick(e) {
-    e.preventDefault();
-    const { active } = this.state;
-
-    if (active) {
-      this.setState({ active: null });
-    } else {
-      this.setState({ active: ' is-active' });
-    }
-  }
-
-  render() {
-    const { active } = this.state;
-    const { animation } = this.props;
-
-    return (
-      <button
-        className={`hamburger hamburger--${animation} $this.state.active${active}`}
-        type="button"
-        onClick={this.handleClick}
-        aria-label="Menu"
-        aria-expanded={active}
-      >
-        <span className="hamburger-box">
-          <span className="hamburger-inner" />
-        </span>
-      </button>
-    );
-  }
-}
-
-Hamburger.propTypes = {
+const propTypes = {
   animation: PropTypes.string.isRequired,
 };
 
-Hamburger.defaultProps = {};
+function Hamburger({ animation }) {
+  const isActive = useSelector((state) => state.hamburger.activated);
+  const dispatch = useDispatch();
 
-export { Hamburger, HamburgerUtils };
+  function handleClick(e) {
+    e.preventDefault();
+
+    if (isActive) {
+      dispatch(desactiveHamburger());
+    } else {
+      dispatch(activeHamburger());
+    }
+  }
+
+  return (
+    <button
+      className={`hamburger hamburger--${animation}${isActive ? ' is-active' : ''}`}
+      type="button"
+      onClick={handleClick}
+      aria-label="Menu"
+      aria-expanded={isActive}
+    >
+      <span className="hamburger-box">
+        <span className="hamburger-inner" />
+      </span>
+    </button>
+  );
+}
+
+Hamburger.propTypes = propTypes;
+
+export default Hamburger;
