@@ -1,16 +1,47 @@
 @import '../../../public/static/scss/style';
 
 @include media('<800px') {
-  .header-large-content {
+  .header-main {
     display: none;
   }
 }
 
 @include media('>=800px') {
-  .header-large-content {
+  .header-main {
     display: flex;
     flex-grow: 1;
   }
+
+  .site-header {
+    @include shadow-sm;
+  }
+
+  .header-small-content {
+    display: none;
+  }
+}
+
+.header-large-content {
+  background: color(bg, 1);
+  display: flex;
+  min-height: 80px;
+  z-index: 1;
+}
+
+.header-small-content {
+  @include shadow-sm;
+
+  background: color(bg, 1);
+  position: fixed;
+  transition: 0.2s ease-in;
+}
+
+.hide-menu {
+  top: -85px;
+}
+
+.show-menu {
+  top: 80px;
 }
 
 .button-content {
@@ -23,22 +54,17 @@
 }
 
 .site-header {
-  @include shadow-sm;
-
-  align-items: center;
   background: color(bg, 1);
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 80px;
   position: fixed;
   width: 100%;
-  z-index: 100000;
+  z-index: 1;
 }
 
 .site-header-inner {
   align-items: center;
   display: flex;
+  flex-grow: 1;
   justify-content: space-between;
   padding: 15px 0;
 }

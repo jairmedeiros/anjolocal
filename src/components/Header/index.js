@@ -1,13 +1,16 @@
 import './styles.scss';
+import { useSelector } from 'react-redux';
 import { Button, Hamburger } from '../common';
 import { SPRING } from '../common/Hamburger/animations';
 import { SearchBar } from './components';
 
 function Header() {
+  const hamburgerActivated = useSelector((state) => state.hamburger.activated);
+
   return (
     <>
       <header className="site-header">
-        <div className="container">
+        <div className="container header-large-content">
           <div className="site-header-inner">
             <div className="header-left-elements">
               <h1 className="m-0">
@@ -70,7 +73,7 @@ function Header() {
                 </a>
               </h1>
             </div>
-            <div className="header-large-content">
+            <div className="header-main">
               <SearchBar headerCenter />
               <Button majorStyle="primary" url="#" useShadow>
                 Cadastrar instituição
@@ -79,11 +82,15 @@ function Header() {
             <Hamburger animation={SPRING.normal} />
           </div>
         </div>
-        <div className="container header-small-content">
+        <div
+          className={`container header-small-content${
+            !hamburgerActivated ? ' hide-menu' : ' show-menu'
+          }`}
+        >
           <SearchBar />
           <hr />
           <div className="button-content">
-            <Button majorStyle="primary" url="#" useShadow>
+            <Button majorStyle="primary" url="#">
               Cadastrar instituição
             </Button>
           </div>
