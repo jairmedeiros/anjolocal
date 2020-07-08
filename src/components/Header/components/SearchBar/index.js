@@ -2,6 +2,7 @@ import './styles.scss';
 import { Button } from '../../../common';
 
 function SearchBar() {
+  // TODO: Tornar componente responsivo.
   return (
     <div className="header-center-elements field field-grouped">
       <div className="control control-expanded">
