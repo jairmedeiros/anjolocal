@@ -69,15 +69,22 @@ function Header() {
                 </a>
               </h1>
             </div>
-            <div className="header-responsive-content">
-              <SearchBar />
-              <div className="header-right-elements">
-                <Button majorStyle="primary" url="#" useShadow>
-                  Cadastrar instituição
-                </Button>
-              </div>
+            <div className="header-large-content">
+              <SearchBar headerCenter />
+              <Button majorStyle="primary" url="#" useShadow>
+                Cadastrar instituição
+              </Button>
             </div>
             <Hamburger animation={HamburgerUtils.spring.normal} />
+          </div>
+        </div>
+        <div className="container header-small-content">
+          <SearchBar />
+          <hr />
+          <div className="button-content">
+            <Button majorStyle="primary" url="#" useShadow>
+              Cadastrar instituição
+            </Button>
           </div>
         </div>
       </header>

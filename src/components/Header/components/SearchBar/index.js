@@ -1,9 +1,23 @@
 import './styles.scss';
+import PropTypes from 'prop-types';
 import { Button } from '../../../common';
 
-function SearchBar() {
+const propTypes = {
+  headerCenter: PropTypes.bool,
+};
+
+const defaultProps = {
+  headerCenter: false,
+};
+
+function SearchBar({ headerCenter }) {
+  let currentStyle = 'search-bar field field-grouped';
+
+  if (headerCenter) {
+    currentStyle += ' header-center-elements';
+  }
   return (
-    <div className="header-center-elements field field-grouped">
+    <div className={currentStyle}>
       <div className="control control-expanded mr-0">
         <input className="input" type="text" name="search" placeholder="Pesquisar…" />
       </div>
@@ -21,5 +35,8 @@ function SearchBar() {
     </div>
   );
 }
+
+SearchBar.propTypes = propTypes;
+SearchBar.defaultProps = defaultProps;
 
 export default SearchBar;

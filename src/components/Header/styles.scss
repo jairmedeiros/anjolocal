@@ -1,16 +1,20 @@
 @import '../../../public/static/scss/style';
 
-@include media('<850px') {
-  .header-responsive-content {
+@include media('<800px') {
+  .header-large-content {
     display: none;
   }
 }
 
-@include media('>=850px') {
-  .header-responsive-content {
+@include media('>=800px') {
+  .header-large-content {
     display: flex;
     flex-grow: 1;
   }
+}
+
+.button-content {
+  margin-bottom: 20px;
 }
 
 .header-background-elements {
@@ -24,7 +28,9 @@
   align-items: center;
   background: color(bg, 1);
   display: flex;
-  height: 80px;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 80px;
   position: fixed;
   width: 100%;
   z-index: 100000;

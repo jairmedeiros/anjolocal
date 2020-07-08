@@ -14,7 +14,7 @@ button {
   transform: scale(0.7);
 }
 
-@include media('>=850px') {
+@include media('>=800px') {
   .hamburger {
     display: none;
   }

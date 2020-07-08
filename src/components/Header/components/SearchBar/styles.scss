@@ -1,9 +1,12 @@
 @import '../../../../../public/static/scss/style';
 
+.search-bar {
+  position: relative;
+}
+
 .header-center-elements {
   flex-grow: 1;
   margin: 0 90px;
-  position: relative;
 }
 
 .search-icon {
