@@ -1,5 +1,5 @@
 import './styles.scss';
-import Button from '../common/Button';
+import { Button, Hamburger } from '../common';
 import { SearchBar } from './components';
 
 function Header() {
@@ -69,12 +69,15 @@ function Header() {
                 </a>
               </h1>
             </div>
-            <SearchBar />
-            <div className="header-right-elements">
-              <Button majorStyle="primary" url="#" useShadow>
-                Cadastrar instituição
-              </Button>
+            <div className="header-responsive-content">
+              <SearchBar />
+              <div className="header-right-elements">
+                <Button majorStyle="primary" url="#" useShadow>
+                  Cadastrar instituição
+                </Button>
+              </div>
             </div>
+            <Hamburger />
           </div>
         </div>
       </header>

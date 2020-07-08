@@ -1,0 +1,21 @@
+@import '../../../../public/static/scss/style';
+
+$hamburger-layer-color: color(typography, 2);
+
+@import '~hamburgers/_sass/hamburgers/hamburgers';
+
+button {
+  outline: none;
+}
+
+.hamburger {
+  margin-right: -5px;
+  padding: 6.3px 0 0;
+  transform: scale(0.7);
+}
+
+@include media('>=850px') {
+  .hamburger {
+    display: none;
+  }
+}
