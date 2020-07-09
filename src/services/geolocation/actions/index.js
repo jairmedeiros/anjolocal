@@ -1,9 +1,4 @@
-import {
-  CLEAR,
-  UPDATE_LATITUDE_LONGITUDE,
-  UPDATE_CITY_STATE,
-  UPDATE_ALL_FIELDS,
-} from './constants';
+import { CLEAR, UPDATE_LATITUDE_LONGITUDE, UPDATE_CITY_STATE } from './constants';
 
 function clear() {
   return {
