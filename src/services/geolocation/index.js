@@ -9,15 +9,8 @@ function useLocation() {
   const dispatch = useDispatch();
   const { data, error } = useReverseGeocoding(location.latitude, location.longitude);
 
-  let city;
-  let state;
-  if (data) {
-    city = data.address.city;
-    state = data.address.state;
-  }
-
   function handleError(err) {
-    console.log(err.message);
+    // console.log(err.message);
   }
 
   useEffect(() => {
@@ -29,7 +22,10 @@ function useLocation() {
 
     function handleSuccess({ coords }) {
       dispatch(updateLatitudeLongitude(coords.latitude, coords.longitude));
-      dispatch(updateCityState(city, state));
+
+      if (data) {
+        dispatch(updateCityState(data.address.city, data.address.state));
+      }
     }
 
     geo.getCurrentPosition(handleSuccess, handleError, {
@@ -37,7 +33,7 @@ function useLocation() {
       timeout: 60000, // 1seg
       maximumAge: 86400000, // 24hrs
     });
-  }, [city, dispatch, location.latitude, location.longitude, state]);
+  }, [data, dispatch, location.latitude, location.longitude]);
 }
 
 export default useLocation;
