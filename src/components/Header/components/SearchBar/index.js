@@ -24,11 +24,13 @@ function SearchBar({ headerCenter }) {
     <div className={currentStyle}>
       <div className="control control-expanded mr-0">
         <input
-          className="input"
+          className="input search-input-append"
           type="text"
           name="search"
           placeholder={
-            location.city && location.state ? `${location.city}, ${location.state}` : 'Pesquisar...'
+            location.city && location.state
+              ? `Ex: ${location.city}, ${location.state}`
+              : 'Ex: Recife, Pernambuco'
           }
         />
       </div>
