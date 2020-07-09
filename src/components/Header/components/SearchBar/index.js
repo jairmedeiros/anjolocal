@@ -30,7 +30,7 @@ function SearchBar({ headerCenter }) {
           placeholder={
             location.city && location.state
               ? `Ex: ${location.city}, ${location.state}`
-              : 'Ex: Recife, Pernambuco'
+              : 'Pesquisar...'
           }
         />
       </div>
