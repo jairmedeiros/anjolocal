@@ -1,31 +1,29 @@
+import { CLEAR, UPDATE_LATITUDE_LONGITUDE, UPDATE_CITY_STATE } from './actions/constants';
+
 const initialState = {
-  lastUpdate: 0,
-  light: false,
-  count: 0,
+  latitude: -8.0631617,
+  longitude: -34.8732721,
+  city: 'Recife',
+  state: 'Pernambuco',
 };
 
 function geolocationReducer(state = initialState, action) {
   switch (action.type) {
-    case 'TICK':
+    case CLEAR:
       return {
-        ...state,
-        lastUpdate: action.lastUpdate,
-        light: !!action.light,
+        initialState,
       };
-    case 'INCREMENT':
+    case UPDATE_LATITUDE_LONGITUDE:
       return {
         ...state,
-        count: state.count + 1,
+        latitude: action.payload.latitude,
+        longitude: action.payload.longitude,
       };
-    case 'DECREMENT':
+    case UPDATE_CITY_STATE:
       return {
         ...state,
-        count: state.count - 1,
-      };
-    case 'RESET':
-      return {
-        ...state,
-        count: initialState.count,
+        city: action.payload.city,
+        state: action.payload.state,
       };
     default:
       return state;

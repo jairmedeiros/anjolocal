@@ -1,6 +1,8 @@
 import './styles.scss';
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import { Button } from '../../../common';
+import useLocation from '../../../../services/geolocation';
 
 const propTypes = {
   headerCenter: PropTypes.bool,
@@ -11,7 +13,9 @@ const defaultProps = {
 };
 
 function SearchBar({ headerCenter }) {
+  useLocation();
   let currentStyle = 'search-bar field field-grouped';
+  const location = useSelector((state) => state.geolocation);
 
   if (headerCenter) {
     currentStyle += ' header-center-elements';
@@ -19,7 +23,14 @@ function SearchBar({ headerCenter }) {
   return (
     <div className={currentStyle}>
       <div className="control control-expanded mr-0">
-        <input className="input" type="text" name="search" placeholder="Pesquisar…" />
+        <input
+          className="input"
+          type="text"
+          name="search"
+          placeholder={
+            location.city && location.state ? `${location.city}, ${location.state}` : 'Pesquisar...'
+          }
+        />
       </div>
       <div className="control search-icon">
         <Button url="#">
