@@ -23,7 +23,7 @@ function useLocation() {
     function handleSuccess({ coords }) {
       dispatch(updateLatitudeLongitude(coords.latitude, coords.longitude));
 
-      if (data) {
+      if (data && data.address) {
         dispatch(updateCityState(data.address.city, data.address.state));
       }
     }
