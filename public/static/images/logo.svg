@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="3435" height="1269" version="1.1" viewBox="0 0 3435 1269" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <style>.cls-1{fill:url(#Gradiente_sem_nome_78);}.cls-2,.cls-3,.cls-4{isolation:isolate;}.cls-3,.cls-4{font-size:676.66px; font-weight:600;}.cls-4{letter-spacing:-0.01em;}</style>
+  <linearGradient id="Gradiente_sem_nome_78" x1="1896" x2="3366" y1="1877" y2="2136" gradientTransform="translate(-783 -1738)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#a94caf" offset=".23"/>
+   <stop stop-color="#ab4cac" offset=".35"/>
+   <stop stop-color="#b04ca4" offset=".48"/>
+   <stop stop-color="#c34c86" offset=".61"/>
+   <stop stop-color="#c54c82" offset=".8"/>
+  </linearGradient>
+ </defs>
+ <title>Prancheta 1</title>
+ <text class="cls-3" x="6.0899396" y="1159.3301"><tspan style="font-family:'Fira Sans';font-weight:600">ANJOLOCAL</tspan></text>
+ <path class="cls-1" d="m2e3 0c113 39 186 102 186 173 0 118-202 213-450 213s-450-95-450-213c0-71 74-134 186-173-187 45-315 137-315 244 0 151 259 274 579 274s579-123 579-274c-0.02-106-128-198-315-244z" style="fill:url(#Gradiente_sem_nome_78)"/>
+</svg>
