@@ -1,11 +1,26 @@
-(function init() {
+$(document).ready(function init() {
   const doc = document.documentElement;
 
   doc.classList.remove('no-js');
   doc.classList.add('js');
 
-  // Reveal animations
+  $(window).on('scroll', function ChangeButtonFloating() {
+    const element = document.getElementsByClassName('site-footer')[0];
+    const buttonFloating = document.getElementsByClassName('button-floating')[0];
+    const pageTop = $(window).scrollTop();
+    const pageBottom = pageTop + $(window).height();
+    const elementTop = $(element).offset().top;
+    const elementBottom = elementTop + $(element).height();
+
+    if (elementTop <= pageBottom && elementBottom >= pageTop) {
+      buttonFloating.style.position = 'absolute';
+    } else {
+      buttonFloating.style.position = 'fixed';
+    }
+  });
+
   if (document.body.classList.contains('has-animations')) {
+    // Reveal animations
     /* global ScrollReveal */
     window.sr = ScrollReveal();
     const { sr } = window;
@@ -94,4 +109,4 @@
     doc.classList.add('anime-ready');
     heroAnimation.play();
   }
-})();
+});
