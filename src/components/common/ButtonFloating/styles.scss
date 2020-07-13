@@ -1,10 +1,21 @@
 @import '../../../../public/static/scss/style';
 
-.button-floating {
+.floating {
   animation: shadowFloat 1.2s linear alternate infinite;
   bottom: 30px;
   position: fixed;
   right: 30px;
+}
+
+.floating-inner {
+  position: relative;
+}
+
+.close-button {
+  bottom: 33px;
+  position: absolute;
+  right: -10px;
+  width: 25px;
 }
 
 @keyframes shadowFloat {

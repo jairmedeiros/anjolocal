@@ -6,7 +6,7 @@ $(document).ready(function init() {
 
   $(window).on('scroll', function ChangeButtonFloating() {
     const element = document.getElementsByClassName('site-footer')[0];
-    const buttonFloating = document.getElementsByClassName('button-floating')[0];
+    const buttonFloating = document.getElementsByClassName('floating')[0];
     const pageTop = $(window).scrollTop();
     const pageBottom = pageTop + $(window).height();
     const elementTop = $(element).offset().top;

@@ -15,9 +15,16 @@ const defaultProps = {
 
 function ButtonFloating({ majorStyle, url, children }) {
   return (
-    <Button majorStyle={majorStyle} url={url} customClass="button-floating">
-      {children}
-    </Button>
+    <div className="floating">
+      <div className="floating-inner">
+        <a className="close-button" href="#">
+          <img src="/static/images/close.svg" alt="Fechar" />
+        </a>
+        <Button majorStyle={majorStyle} url={url} customClass="button-floating">
+          {children}
+        </Button>
+      </div>
+    </div>
   );
 }
 
