@@ -1,30 +1,8 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-
-// import { useDispatch } from 'react-redux';
-// import { initializeStore } from '../src/Redux';
-// import { initializeApollo } from '../src/Apollo';
-// import useInterval from '../src/lib/useInterval';
-// import Layout from '../src/Components/Layout';
-// import Clock from '../src/Components/Clock';
-// import Counter from '../src/Components/Counter';
-// import Submit from '../src/Components/Submit';
-// import PostList, { ALL_POSTS_QUERY, allPostsQueryVars } from '../src/Components/PostList';
-
 import { useScript } from '../src/utils/hooks';
 import { Header, Features, Hero, Footer, Institutions } from '../src/components';
+import { Button } from '../src/components/common';
 
 function Index() {
-  // Tick the time every second
-  // const dispatch = useDispatch();
-
-  // useInterval(() => {
-  //   dispatch({
-  //     type: 'TICK',
-  //     light: true,
-  //     lastUpdate: Date.now(),
-  //   });
-  // }, 1000);
-
   useScript('/static/js/main.js');
 
   return (
@@ -34,6 +12,9 @@ function Index() {
         <Hero />
         <Features />
         <Institutions />
+        <Button majorStyle="primary" url="#" isFloating>
+          Colabore com a gente!
+        </Button>
       </main>
       <Footer />
     </div>
