@@ -3,18 +3,35 @@
 .floating {
   animation: shadowFloat 1.2s linear alternate infinite;
   bottom: 30px;
+  opacity: 1;
   position: fixed;
   right: 30px;
+  transition: opacity 0.2s linear;
 }
 
 .floating-inner {
   position: relative;
 }
 
+button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: none;
+}
+
+.hide-content {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .close-button {
   bottom: 33px;
   position: absolute;
+  right: 30px;
   right: -10px;
+  transition: opacity 0.1s linear;
   width: 25px;
 }
 

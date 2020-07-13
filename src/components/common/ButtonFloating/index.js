@@ -1,5 +1,8 @@
-import './styles.scss';
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
+import { hideButtonFloating } from './actions';
+import './styles.scss';
 import Button from '../Button';
 
 const propTypes = {
@@ -14,12 +17,36 @@ const defaultProps = {
 };
 
 function ButtonFloating({ majorStyle, url, children }) {
+  const isHide = useSelector((state) => state.buttonFloating.hide);
+  const [hideCloseButton, setHideCloseButton] = useState(true);
+  const dispatch = useDispatch();
+
+  function handleClick(e) {
+    e.preventDefault();
+
+    if (!isHide) {
+      dispatch(hideButtonFloating());
+    }
+  }
+
+  function HandleHover(e) {
+    e.preventDefault();
+
+    if (hideCloseButton) {
+      setHideCloseButton(false);
+    }
+  }
+
   return (
-    <div className="floating">
+    <div onMouseEnter={HandleHover} className={`floating ${isHide ? ' hide-content' : ''}`}>
       <div className="floating-inner">
-        <a className="close-button" href="#">
+        <button
+          type="button"
+          onClick={handleClick}
+          className={`close-button ${hideCloseButton ? 'hide-content' : ''}`}
+        >
           <img src="/static/images/close.svg" alt="Fechar" />
-        </a>
+        </button>
         <Button majorStyle={majorStyle} url={url} customClass="button-floating">
           {children}
         </Button>

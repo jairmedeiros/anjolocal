@@ -1,22 +1,30 @@
 $(document).ready(function init() {
   const doc = document.documentElement;
+  const buttonFloating = document.getElementsByClassName('floating')[0];
+  const element = document.getElementsByClassName('site-footer')[0];
 
   doc.classList.remove('no-js');
   doc.classList.add('js');
 
-  $(window).on('scroll', function ChangeButtonFloating() {
-    const element = document.getElementsByClassName('site-footer')[0];
-    const buttonFloating = document.getElementsByClassName('floating')[0];
-    const pageTop = $(window).scrollTop();
-    const pageBottom = pageTop + $(window).height();
-    const elementTop = $(element).offset().top;
-    const elementBottom = elementTop + $(element).height();
+  function changeButtonFloatingState() {
+    if (buttonFloating) {
+      const pageTop = $(window).scrollTop();
+      const pageBottom = pageTop + $(window).height();
+      const elementTop = $(element).offset().top;
+      const elementBottom = elementTop + $(element).height();
 
-    if (elementTop <= pageBottom && elementBottom >= pageTop) {
-      buttonFloating.style.position = 'absolute';
-    } else {
-      buttonFloating.style.position = 'fixed';
+      if (elementTop <= pageBottom && elementBottom >= pageTop) {
+        buttonFloating.style.position = 'absolute';
+      } else {
+        buttonFloating.style.position = 'fixed';
+      }
     }
+  }
+
+  changeButtonFloatingState();
+
+  $(window).on('scroll', function ChangeButtonFloating() {
+    changeButtonFloatingState();
   });
 
   if (document.body.classList.contains('has-animations')) {
