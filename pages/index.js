@@ -1,23 +1,15 @@
 import { useScript } from '../src/utils/hooks';
-import { Header, Features, Hero, Footer, Institutions } from '../src/components';
-import { Button } from '../src/components/common';
+import { Features, Hero, Institutions } from '../src/scenes/Index';
 
 function Index() {
   useScript('/static/js/main.js');
 
   return (
-    <div className="body-wrap">
-      <Header />
-      <main>
-        <Hero />
-        <Features />
-        <Institutions />
-        <Button majorStyle="primary" url="#" isFloating>
-          Colabore com a gente!
-        </Button>
-      </main>
-      <Footer />
-    </div>
+    <>
+      <Hero />
+      <Features />
+      <Institutions />
+    </>
   );
 }
 

@@ -1,5 +1,5 @@
 import './styles.scss';
-import Button from '../common/Button';
+import { Button } from '../../../../components/common';
 
 function Hero() {
   return (
