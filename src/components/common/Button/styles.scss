@@ -46,10 +46,10 @@
 .button-primary {
   background: color(primary, 1);
   color: color(typography, 1i) !important;
-  transition: background 0.15s ease;
+  transition: background-color 0.3s linear, color 0.3s linear;
 
   &:hover {
-    background: darken(color(primary, 1), 2%);
+    background: darken(color(primary, 1), 7%);
   }
 }
 
