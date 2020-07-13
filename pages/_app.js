@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import Head from 'next/head';
 import { useStore, useApollo } from '../src';
 import { Header, Footer } from '../src/components';
-import { Button } from '../src/components/common';
+import { ButtonFloating } from '../src/components/common';
 
 function App({ Component, pageProps }) {
   const store = useStore(pageProps.initialReduxState);
@@ -28,9 +28,9 @@ function App({ Component, pageProps }) {
           <Header />
           <main>
             <Component {...pageProps} />
-            <Button majorStyle="primary" url="#" isFloating>
+            <ButtonFloating majorStyle="primary" url="#">
               Colabore com a gente!
-            </Button>
+            </ButtonFloating>
           </main>
           <Footer />
         </div>

@@ -1,0 +1,19 @@
+@import '../../../../public/static/scss/style';
+
+.button-floating {
+  animation: shadowFloat 1.2s linear alternate infinite;
+  bottom: 30px;
+  position: fixed;
+  right: 30px;
+}
+
+@keyframes shadowFloat {
+  0% {
+    box-shadow: 0 20px 40px rgba(17, 16, 62, 0.12);
+    transform: translateY(-3px);
+  }
+  100% {
+    box-shadow: 0 10px 10px darken(rgba(17, 16, 62, 0.12), 5%);
+    transform: translateY(3px);
+  }
+}
