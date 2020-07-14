@@ -9,6 +9,45 @@
   transition: opacity 0.2s linear;
 }
 
+.hide-content {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.button-floating {
+  overflow: hidden;
+  position: relative;
+  transition: width 0.3s linear;
+  width: 65px;
+  @include media('>789px') {
+    width: 255px;
+  }
+
+  &.show {
+    width: 255px;
+  }
+}
+
+.emoji {
+  left: 24px;
+  padding-top: 1px;
+  position: absolute;
+  transform: scale(2.2);
+}
+
+.text-floating {
+  position: absolute;
+  right: -170px;
+  transition: all 0.3s linear;
+  @include media('>789px') {
+    right: 20px;
+  }
+
+  &.show {
+    right: 20px;
+  }
+}
+
 .floating-inner {
   position: relative;
 }
@@ -21,11 +60,6 @@ button {
   text-decoration: none;
 }
 
-.hide-content {
-  opacity: 0;
-  pointer-events: none;
-}
-
 .close-button {
   bottom: 33px;
   position: absolute;
@@ -33,6 +67,7 @@ button {
   right: -10px;
   transition: opacity 0.1s linear;
   width: 25px;
+  z-index: 1;
 }
 
 @keyframes shadowFloat {

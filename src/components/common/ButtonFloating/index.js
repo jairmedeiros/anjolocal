@@ -1,27 +1,62 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
+import { useRouter } from 'next/router';
 import { hideButtonFloating } from './actions';
+
 import './styles.scss';
-import Button from '../Button';
 
 const propTypes = {
   majorStyle: PropTypes.string,
   url: PropTypes.string.isRequired,
-  children: PropTypes.node,
+  emoji: PropTypes.string,
+  textFloating: PropTypes.string.isRequired,
 };
 
 const defaultProps = {
   majorStyle: null,
-  children: null,
+  emoji: null,
 };
 
-function ButtonFloating({ majorStyle, url, children }) {
+function ButtonFloating({ majorStyle, url, emoji, textFloating }) {
+  const router = useRouter();
   const isHide = useSelector((state) => state.buttonFloating.hide);
+  const node = useRef();
   const [hideCloseButton, setHideCloseButton] = useState(true);
+  const [showButtonFloating, setshowButtonFloating] = useState(false);
+  const [width, setWidth] = useState(undefined);
   const dispatch = useDispatch();
 
-  function handleClick(e) {
+  useEffect(() => {
+    setWidth(window.innerWidth);
+
+    function handleResize() {
+      setWidth(window.innerWidth);
+    }
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [width]);
+
+  function handleClickOutsideButtonFloating(e) {
+    if (!node.current.contains(e.target)) {
+      setshowButtonFloating(false);
+      setHideCloseButton(true);
+    }
+  }
+
+  useEffect(() => {
+    if (showButtonFloating) {
+      document.addEventListener('mousedown', handleClickOutsideButtonFloating);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutsideButtonFloating);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutsideButtonFloating);
+    };
+  }, [showButtonFloating]);
+
+  function handleCloseClick(e) {
     e.preventDefault();
 
     if (!isHide) {
@@ -29,8 +64,23 @@ function ButtonFloating({ majorStyle, url, children }) {
     }
   }
 
-  function HandleHover(e) {
+  function handleClick(e) {
     e.preventDefault();
+
+    if (width) {
+      if (width > 789 || showButtonFloating) {
+        router.push(url);
+        setshowButtonFloating(false);
+        setHideCloseButton(true);
+      } else {
+        setshowButtonFloating(true);
+      }
+    }
+  }
+
+  function handleHover(e) {
+    e.preventDefault();
+    console.log(hideCloseButton);
 
     if (hideCloseButton) {
       setHideCloseButton(false);
@@ -41,21 +91,29 @@ function ButtonFloating({ majorStyle, url, children }) {
 
   return (
     <div
-      onMouseEnter={HandleHover}
-      onMouseLeave={HandleHover}
-      className={`floating ${isHide ? ' hide-content' : ''}`}
+      ref={node}
+      onMouseEnter={handleHover}
+      onMouseLeave={handleHover}
+      className={`floating${isHide ? ' hide-content' : ''}`}
     >
       <div className="floating-inner">
         <button
           type="button"
-          onClick={handleClick}
-          className={`close-button ${hideCloseButton ? 'hide-content' : ''}`}
+          onClick={handleCloseClick}
+          className={`close-button${hideCloseButton && !showButtonFloating ? ' hide-content' : ''}`}
         >
           <img src="/static/images/close.svg" alt="Fechar" />
         </button>
-        <Button majorStyle={majorStyle} url={url} customClass="button-floating">
-          {children}
-        </Button>
+        <button
+          type="button"
+          onClick={handleClick}
+          className={`button button-block button-${majorStyle} button-floating${
+            showButtonFloating ? ' show' : ''
+          }`}
+        >
+          <div className="emoji">{emoji}</div>
+          <div className={`text-floating${showButtonFloating ? ' show' : ''}`}>{textFloating}</div>
+        </button>
       </div>
     </div>
   );
