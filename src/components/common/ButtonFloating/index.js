@@ -34,11 +34,17 @@ function ButtonFloating({ majorStyle, url, children }) {
 
     if (hideCloseButton) {
       setHideCloseButton(false);
+    } else {
+      setHideCloseButton(true);
     }
   }
 
   return (
-    <div onMouseEnter={HandleHover} className={`floating ${isHide ? ' hide-content' : ''}`}>
+    <div
+      onMouseEnter={HandleHover}
+      onMouseLeave={HandleHover}
+      className={`floating ${isHide ? ' hide-content' : ''}`}
+    >
       <div className="floating-inner">
         <button
           type="button"
