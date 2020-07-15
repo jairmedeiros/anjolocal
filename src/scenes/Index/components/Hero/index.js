@@ -1,26 +1,76 @@
 import './styles.scss';
 import { useSelector, useDispatch } from 'react-redux';
+import { useForm } from 'react-hook-form';
+import React, { useEffect, useState, useRef } from 'react';
+import useMergedRef from '@react-hook/merged-ref';
 import { Modal } from '../../../../components/common';
 import { showModal, hideModal } from '../../../../components/common/Modal/actions';
 
 function Hero() {
+  // TODO: Mandar informacoes de e-mail via store para ser recebido no Modal
+  const { register, watch, setError, trigger, clearErrors, errors } = useForm({
+    mode: 'onChange',
+  });
+  const node = useRef();
+  const watchEmailHero = watch('emailHero', '');
   const dispatch = useDispatch();
   const modalId = 'newsletter-hero';
   const currentModal = useSelector((state) => state.modal.currents).find(
     (modalFetched) => modalFetched && modalFetched.id === modalId,
   );
+  const [width, setWidth] = useState(undefined);
 
   if (!currentModal) {
     dispatch(hideModal(modalId));
   }
 
-  function handleClick(e) {
-    e.preventDefault();
+  useEffect(() => {
+    setWidth(window.innerWidth);
 
-    if (currentModal.hide) {
-      dispatch(showModal(modalId));
+    function handleResize() {
+      setWidth(window.innerWidth);
+    }
+    window.addEventListener('resize', handleResize);
+
+    function handleClickOutsideModal(e) {
+      if (!node.current.contains(e.target)) {
+        clearErrors('emailHero');
+      }
+    }
+
+    if (errors.emailHero) {
+      document.removeEventListener('mousedown', handleClickOutsideModal);
     } else {
-      dispatch(hideModal(modalId));
+      document.addEventListener('mousedown', handleClickOutsideModal);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutsideModal);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [clearErrors, errors, width]);
+
+  function handleBlur(e) {
+    e.preventDefault();
+  }
+
+  async function handleClick(e) {
+    e.preventDefault();
+    const result = await trigger('emailHero');
+
+    if (result) {
+      if (watchEmailHero.length > 0) {
+        if (currentModal.hide) {
+          dispatch(showModal(modalId));
+        } else {
+          dispatch(hideModal(modalId));
+        }
+      } else {
+        setError('emailHero', {
+          type: 'required',
+          message: 'Insira um e-mail antes.',
+        });
+      }
     }
   }
 
@@ -40,19 +90,36 @@ function Hero() {
                 <input
                   className="input"
                   type="email"
-                  name="email"
+                  name="emailHero"
+                  onBlur={handleBlur}
+                  ref={useMergedRef(
+                    register({
+                      required: 'Insira um e-mail antes.',
+                      pattern: {
+                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                        message: 'Precisamos que seja um e-mail válido.',
+                      },
+                    }),
+                    node,
+                  )}
                   placeholder="Digite seu email…"
                 />
+                {width > 789 && errors.emailHero && (
+                  <div className="hero-input-error">{errors.emailHero.message}</div>
+                )}
               </div>
               <div className="control">
                 <button
-                  type="button"
+                  type="submit"
                   onClick={handleClick}
                   className="button button-block button-primary button-shadow hero-button"
                 >
                   Assinar
                 </button>
               </div>
+              {width < 789 && errors.emailHero && (
+                <div className="hero-input-error">{errors.emailHero.message}</div>
+              )}
             </div>
           </div>
           <div className="hero-illustration">
