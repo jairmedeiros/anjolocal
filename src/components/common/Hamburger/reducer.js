@@ -1,5 +1,7 @@
 import { ACTIVATED, DESACTIVATED } from './actions/constants';
 
+// TODO: Aplicar no HamburgerReducer logica do ModalReducer, de utilizar array para N componentes montados pela pagina
+
 const initialState = {
   activated: false,
 };

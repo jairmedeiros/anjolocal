@@ -1,5 +1,7 @@
 import { HIDE, SHOW } from './actions/constants';
 
+// TODO: Aplicar no ButtonFloatingReducer logica do ModalReducer, de utilizar array para N componentes montados pela pagina
+
 const initialState = {
   hide: false,
 };
