@@ -68,7 +68,7 @@ function Hero() {
       } else {
         setError('emailHero', {
           type: 'required',
-          message: 'Insira um e-mail antes.',
+          message: 'Insira um e-mail válido.',
         });
       }
     }
@@ -94,7 +94,7 @@ function Hero() {
                   onBlur={handleBlur}
                   ref={useMergedRef(
                     register({
-                      required: 'Insira um e-mail antes.',
+                      required: 'Insira um e-mail válido.',
                       pattern: {
                         value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
                         message: 'Precisamos que seja um e-mail válido.',
