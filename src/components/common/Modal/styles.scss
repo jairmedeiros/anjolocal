@@ -1,0 +1,44 @@
+@import '../../../../public/static/scss/style';
+
+.bg-modal {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 0;
+
+  &.show {
+    opacity: 1;
+    pointer-events: all;
+    z-index: 1;
+  }
+}
+
+.modal {
+  background: #fafafa;
+  border-radius: 5px;
+  height: 350px;
+  padding: 24px 0;
+  pointer-events: none;
+  width: 460px;
+  z-index: 0;
+
+  @include media('<791px') {
+    margin: 0 16px;
+  }
+
+  &.show {
+    pointer-events: all;
+    z-index: 1;
+  }
+}
+
+.content {
+  height: 100%;
+}

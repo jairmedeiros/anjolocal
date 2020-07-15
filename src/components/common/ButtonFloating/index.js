@@ -23,7 +23,7 @@ function ButtonFloating({ majorStyle, url, emoji, textFloating }) {
   const isHide = useSelector((state) => state.buttonFloating.hide);
   const node = useRef();
   const [hideCloseButton, setHideCloseButton] = useState(true);
-  const [showButtonFloating, setshowButtonFloating] = useState(false);
+  const [showButtonFloating, setShowButtonFloating] = useState(false);
   const [width, setWidth] = useState(undefined);
   const dispatch = useDispatch();
 
@@ -39,7 +39,7 @@ function ButtonFloating({ majorStyle, url, emoji, textFloating }) {
 
   function handleClickOutsideButtonFloating(e) {
     if (!node.current.contains(e.target)) {
-      setshowButtonFloating(false);
+      setShowButtonFloating(false);
       setHideCloseButton(true);
     }
   }
@@ -70,17 +70,16 @@ function ButtonFloating({ majorStyle, url, emoji, textFloating }) {
     if (width) {
       if (width > 789 || showButtonFloating) {
         router.push(url);
-        setshowButtonFloating(false);
+        setShowButtonFloating(false);
         setHideCloseButton(true);
       } else {
-        setshowButtonFloating(true);
+        setShowButtonFloating(true);
       }
     }
   }
 
   function handleHover(e) {
     e.preventDefault();
-    console.log(hideCloseButton);
 
     if (hideCloseButton) {
       setHideCloseButton(false);

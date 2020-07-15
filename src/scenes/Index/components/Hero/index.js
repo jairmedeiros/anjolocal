@@ -1,9 +1,32 @@
 import './styles.scss';
-import { Button } from '../../../../components/common';
+import { useSelector, useDispatch } from 'react-redux';
+import { Modal } from '../../../../components/common';
+import { showModal, hideModal } from '../../../../components/common/Modal/actions';
 
 function Hero() {
+  const dispatch = useDispatch();
+  const modalId = 'newsletter-hero';
+  const currentModal = useSelector((state) => state.modal.currents).find(
+    (modalFetched) => modalFetched && modalFetched.id === modalId,
+  );
+
+  if (!currentModal) {
+    dispatch(hideModal(modalId));
+  }
+
+  function handleClick(e) {
+    e.preventDefault();
+
+    if (currentModal.hide) {
+      dispatch(showModal(modalId));
+    } else {
+      dispatch(hideModal(modalId));
+    }
+  }
+
   return (
     <section className="hero">
+      <Modal id={modalId}>Testing</Modal>
       <div className="container">
         <div className="hero-inner">
           <div className="hero-copy">
@@ -22,9 +45,13 @@ function Hero() {
                 />
               </div>
               <div className="control">
-                <Button majorStyle="primary" url="#" useShadow>
+                <button
+                  type="button"
+                  onClick={handleClick}
+                  className="button button-block button-primary button-floating button-shadow"
+                >
                   Assinar
-                </Button>
+                </button>
               </div>
             </div>
           </div>
