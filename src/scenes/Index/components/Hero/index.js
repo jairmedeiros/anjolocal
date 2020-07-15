@@ -50,26 +50,15 @@ function Hero() {
     };
   }, [clearErrors, errors, width]);
 
-  function handleBlur(e) {
-    e.preventDefault();
-  }
-
   async function handleClick(e) {
     e.preventDefault();
     const result = await trigger('emailHero');
 
     if (result) {
-      if (watchEmailHero.length > 0) {
-        if (currentModal.hide) {
-          dispatch(showModal(modalId));
-        } else {
-          dispatch(hideModal(modalId));
-        }
+      if (currentModal.hide) {
+        dispatch(showModal(modalId));
       } else {
-        setError('emailHero', {
-          type: 'required',
-          message: 'Insira um e-mail válido.',
-        });
+        dispatch(hideModal(modalId));
       }
     }
   }
@@ -91,7 +80,6 @@ function Hero() {
                   className="input"
                   type="email"
                   name="emailHero"
-                  onBlur={handleBlur}
                   ref={useMergedRef(
                     register({
                       required: 'Insira um e-mail válido.',
