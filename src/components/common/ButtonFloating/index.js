@@ -19,6 +19,7 @@ const defaultProps = {
 };
 
 function ButtonFloating({ majorStyle, url, emoji, textFloating }) {
+  // TODO: Transformar manipulacao de tamanhos do dispositivo em hook independente.
   const router = useRouter();
   const isHide = useSelector((state) => state.buttonFloating.hide);
   const node = useRef();
@@ -67,14 +68,12 @@ function ButtonFloating({ majorStyle, url, emoji, textFloating }) {
   function handleClick(e) {
     e.preventDefault();
 
-    if (width) {
-      if (width > 789 || showButtonFloating) {
-        router.push(url);
-        setShowButtonFloating(false);
-        setHideCloseButton(true);
-      } else {
-        setShowButtonFloating(true);
-      }
+    if (width > 789 || showButtonFloating) {
+      router.push(url);
+      setShowButtonFloating(false);
+      setHideCloseButton(true);
+    } else {
+      setShowButtonFloating(true);
     }
   }
 
