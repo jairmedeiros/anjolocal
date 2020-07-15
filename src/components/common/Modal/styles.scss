@@ -21,6 +21,8 @@
 }
 
 .modal {
+  @include shadow;
+
   background: #fafafa;
   border-radius: 2px;
   height: 350px;
