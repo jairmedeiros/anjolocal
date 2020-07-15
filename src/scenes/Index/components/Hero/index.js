@@ -48,7 +48,7 @@ function Hero() {
                 <button
                   type="button"
                   onClick={handleClick}
-                  className="button button-block button-primary button-floating button-shadow"
+                  className="button button-block button-primary button-shadow hero-button"
                 >
                   Assinar
                 </button>
