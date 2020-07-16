@@ -26,8 +26,10 @@
   background: #fafafa;
   border-radius: 2px;
   min-height: 350px;
+  opacity: 0;
   padding: 24px 0;
   pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
   width: 460px;
   z-index: 0;
 
@@ -36,6 +38,7 @@
   }
 
   &.show {
+    opacity: 1;
     pointer-events: all;
     z-index: 1;
   }
