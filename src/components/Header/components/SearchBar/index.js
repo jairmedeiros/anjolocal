@@ -27,6 +27,7 @@ function SearchBar({ headerCenter }) {
           className="input search-input-append"
           type="text"
           name="search"
+          maxLength={60}
           placeholder={
             location.city && location.state
               ? `Ex: ${location.city}, ${location.state}`

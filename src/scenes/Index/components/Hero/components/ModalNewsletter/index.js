@@ -65,7 +65,7 @@ function NewsletterModal({ id }) {
                 name="name"
                 id="nameNewsletter"
                 ref={register()}
-                maxLength={50}
+                maxLength={60}
                 placeholder="Digite seu nome..."
               />
             </label>
@@ -87,7 +87,7 @@ function NewsletterModal({ id }) {
                     message: 'Precisamos que seja um e-mail válido.',
                   },
                 })}
-                maxLength={50}
+                maxLength={60}
                 placeholder="Digite seu email…"
                 defaultValue={email}
               />
@@ -113,7 +113,7 @@ function NewsletterModal({ id }) {
                   },
                 })}
                 placeholder="Digite um endereço..."
-                maxLength={50}
+                maxLength={60}
                 defaultValue={location}
               />
             </label>

@@ -85,6 +85,7 @@ function Hero() {
                   className="input"
                   type="email"
                   name="emailHero"
+                  maxLength={60}
                   ref={useMergedRef(
                     register({
                       required: 'Insira um e-mail válido.',
