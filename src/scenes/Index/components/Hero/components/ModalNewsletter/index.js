@@ -65,6 +65,7 @@ function NewsletterModal({ id }) {
                 name="name"
                 id="nameNewsletter"
                 ref={register()}
+                maxLength={50}
                 placeholder="Digite seu nome..."
               />
             </label>
@@ -86,6 +87,7 @@ function NewsletterModal({ id }) {
                     message: 'Precisamos que seja um e-mail válido.',
                   },
                 })}
+                maxLength={50}
                 placeholder="Digite seu email…"
                 defaultValue={email}
               />
@@ -106,11 +108,12 @@ function NewsletterModal({ id }) {
                 name="location"
                 ref={register({
                   pattern: {
-                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                    message: 'Precisamos que seja um e-mail válido.',
+                    value: /^([A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ0-9 ]*)+(, )+([A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ0-9 ]*)$/i,
+                    message: "Siga a formatação: 'Cidade, Estado'",
                   },
                 })}
                 placeholder="Digite um endereço..."
+                maxLength={50}
                 defaultValue={location}
               />
             </label>
