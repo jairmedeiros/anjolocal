@@ -3,12 +3,12 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import React, { useEffect, useState, useRef } from 'react';
 import useMergedRef from '@react-hook/merged-ref';
-import { Modal } from '../../../../components/common';
-import { showModal, hideModal } from '../../../../components/common/Modal/actions';
+import NewsletterModal from './components/ModalNewsletter';
+import { showModal, hideModal, sendDataModal } from '../../../../components/common/Modal/actions';
 
 function Hero() {
   // TODO: Mandar informacoes de e-mail via store para ser recebido no Modal
-  const { register, watch, setError, trigger, clearErrors, errors } = useForm({
+  const { register, watch, trigger, clearErrors, errors } = useForm({
     mode: 'onChange',
   });
   const node = useRef();
@@ -57,6 +57,11 @@ function Hero() {
     if (result) {
       if (currentModal.hide) {
         dispatch(showModal(modalId));
+        dispatch(
+          sendDataModal(modalId, {
+            email: watchEmailHero,
+          }),
+        );
       } else {
         dispatch(hideModal(modalId));
       }
@@ -65,7 +70,7 @@ function Hero() {
 
   return (
     <section className="hero">
-      <Modal id={modalId}>Testing</Modal>
+      <NewsletterModal id={modalId} />
       <div className="container">
         <div className="hero-inner">
           <div className="hero-copy">

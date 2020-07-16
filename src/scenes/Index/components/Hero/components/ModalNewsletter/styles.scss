@@ -1,0 +1,41 @@
+@import '../../../../../../../public/static/scss/style';
+
+.news-modal-title {
+  align-items: start;
+  display: flex;
+  justify-content: space-between;
+}
+
+.news-modal-close {
+  display: flex;
+  justify-content: flex-end;
+  width: 15%;
+}
+
+.newsletter-form {
+  margin-top: 20px;
+}
+
+.control-newsletter {
+  margin-bottom: 15px;
+}
+
+.button-newsletter {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+
+.news-modal-title-detail {
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: 15px;
+}
+
+.news-modal-close-icon {
+  width: 30px;
+}
+
+.news-modal-title-text {
+  text-align: start;
+}

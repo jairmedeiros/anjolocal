@@ -1,13 +1,13 @@
-import { HIDE, SHOW } from './actions/constants';
+import { HIDE, SHOW, SEND_DATA } from './actions/constants';
 
 const initialState = {
   currents: [],
 };
 
-function createOrChangeState(isHide, payLoad, currentsArray) {
+function createOrChangeState(payLoad, currentsArray) {
   const modal = {
-    id: payLoad,
-    hide: isHide,
+    id: payLoad.id,
+    hide: Object.prototype.hasOwnProperty.call(payLoad, 'hide') ? payLoad.hide : false,
   };
 
   const currentsModal = currentsArray.find(
@@ -16,6 +16,9 @@ function createOrChangeState(isHide, payLoad, currentsArray) {
 
   if (currentsModal) {
     currentsModal.hide = modal.hide;
+    if (Object.prototype.hasOwnProperty.call(payLoad, 'data')) {
+      currentsModal.data = payLoad.data;
+    }
   } else {
     currentsArray.push(modal);
   }
@@ -28,12 +31,17 @@ function modalReducer(state = initialState, action) {
     case HIDE:
       return {
         ...state,
-        currents: createOrChangeState(true, action.payload.id, state.currents.slice()),
+        currents: createOrChangeState(action.payload, state.currents.slice()),
       };
     case SHOW:
       return {
         ...state,
-        currents: createOrChangeState(false, action.payload.id, state.currents.slice()),
+        currents: createOrChangeState(action.payload, state.currents.slice()),
+      };
+    case SEND_DATA:
+      return {
+        ...state,
+        currents: createOrChangeState(action.payload, state.currents.slice()),
       };
     default:
       return state;
