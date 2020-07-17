@@ -51,7 +51,7 @@ function NewsletterModal({ id }) {
             </div>
           </div>
           <button onClick={handleClickClose} className="news-modal-close" type="button">
-            <img className="news-modal-close-icon" src="/static/images/close.svg" alt="Fechar" />
+            <img className="news-modal-close-icon" src="/static/images/multiply.svg" alt="Fechar" />
           </button>
         </div>
         <form onSubmit={handleSubmit(handleSubmitNewsletter)} className="hero-form newsletter-form">
