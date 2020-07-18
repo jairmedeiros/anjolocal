@@ -1,90 +1,59 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
-import { hideButtonFloating } from './actions';
+import useWidthPage from '../../../utils/hooks/useWidthPage';
 
 import './styles.scss';
+import { MOUSE_DOWN } from '../../../utils/hooks/useMouseEvent/constants';
+import useMouseEvent from '../../../utils/hooks/useMouseEvent';
 
 const propTypes = {
-  majorStyle: PropTypes.string,
+  mainStyle: PropTypes.string,
   url: PropTypes.string.isRequired,
   emoji: PropTypes.string,
-  textFloating: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
 };
 
 const defaultProps = {
-  majorStyle: null,
+  mainStyle: null,
   emoji: null,
 };
 
-function ButtonFloating({ majorStyle, url, emoji, textFloating }) {
-  // TODO: Transformar manipulacao de tamanhos do dispositivo em hook independente.
+function ButtonFloating({ mainStyle, url, emoji, text }) {
   const router = useRouter();
-  const isHide = useSelector((state) => state.buttonFloating.hide);
+  const widthPage = useWidthPage();
   const node = useRef();
-  const [hideCloseButton, setHideCloseButton] = useState(true);
-  const [showButtonFloating, setShowButtonFloating] = useState(false);
-  const [width, setWidth] = useState(undefined);
-  const dispatch = useDispatch();
 
-  useEffect(() => {
-    setWidth(window.innerWidth);
+  const [closeButtonIsShown, setCloseButtonIsShown] = useState(false);
+  const [mainContentIsShown, setMainContentIsShown] = useState(true);
+  const [mainContentIsExpanded, setMainContentIsExpanded] = useState(false);
 
-    function handleResize() {
-      setWidth(window.innerWidth);
-    }
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [width]);
+  useMouseEvent(
+    mainContentIsShown,
+    () => {
+      setMainContentIsExpanded(false);
+      setCloseButtonIsShown(false);
+    },
+    node,
+    MOUSE_DOWN,
+  );
 
-  function handleClickOutsideButtonFloating(e) {
-    if (!node.current.contains(e.target)) {
-      setShowButtonFloating(false);
-      setHideCloseButton(true);
-    }
+  function handleCloseClick() {
+    setCloseButtonIsShown(false);
+    setMainContentIsShown(false);
   }
 
-  useEffect(() => {
-    if (showButtonFloating) {
-      document.addEventListener('mousedown', handleClickOutsideButtonFloating);
-    } else {
-      document.removeEventListener('mousedown', handleClickOutsideButtonFloating);
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutsideButtonFloating);
-    };
-  }, [showButtonFloating]);
-
-  function handleCloseClick(e) {
-    e.preventDefault();
-
-    if (!isHide) {
-      dispatch(hideButtonFloating());
-    }
-  }
-
-  function handleClick(e) {
-    e.preventDefault();
-
-    if (width > 789 || showButtonFloating) {
+  function handleClick() {
+    if (widthPage.isDesktop || mainContentIsExpanded) {
       router.push(url);
-      setShowButtonFloating(false);
-      setHideCloseButton(true);
     } else {
-      setShowButtonFloating(true);
+      setMainContentIsExpanded(true);
+      setCloseButtonIsShown(true);
     }
   }
 
-  function handleHover(e) {
-    e.preventDefault();
-
-    if (hideCloseButton) {
-      setHideCloseButton(false);
-    } else {
-      setHideCloseButton(true);
-    }
+  function handleHover() {
+    setCloseButtonIsShown(!closeButtonIsShown);
   }
 
   return (
@@ -92,25 +61,27 @@ function ButtonFloating({ majorStyle, url, emoji, textFloating }) {
       ref={node}
       onMouseEnter={handleHover}
       onMouseLeave={handleHover}
-      className={`floating${isHide ? ' hide-content' : ''}`}
+      className={`floating${mainContentIsShown ? '' : ' hide-content'}`}
     >
       <div className="floating-inner">
         <button
           type="button"
           onClick={handleCloseClick}
-          className={`close-button${hideCloseButton && !showButtonFloating ? ' hide-content' : ''}`}
+          className={`close-button${
+            closeButtonIsShown && mainContentIsShown ? '' : ' hide-content'
+          }`}
         >
           <img src="/static/images/close.svg" alt="Fechar" />
         </button>
         <button
           type="button"
           onClick={handleClick}
-          className={`button button-block button-${majorStyle} button-floating${
-            showButtonFloating ? ' show' : ''
+          className={`button button-block button-${mainStyle} button-floating${
+            mainContentIsExpanded ? ' show' : ''
           }`}
         >
           <div className="emoji">{emoji}</div>
-          <div className={`text-floating${showButtonFloating ? ' show' : ''}`}>{textFloating}</div>
+          <div className={`text-floating${mainContentIsExpanded ? ' show' : ''}`}>{text}</div>
         </button>
       </div>
     </div>

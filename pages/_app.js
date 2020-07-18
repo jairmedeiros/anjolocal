@@ -37,12 +37,7 @@ function App({ Component, pageProps }) {
           <Header />
           <main>
             <Component {...pageProps} />
-            <ButtonFloating
-              majorStyle="primary"
-              url="/#"
-              emoji="🤝"
-              textFloating="Colabore com a gente!"
-            />
+            <ButtonFloating mainStyle="primary" url="/#" emoji="🤝" text="Colabore com a gente!" />
           </main>
           <Footer />
         </div>
