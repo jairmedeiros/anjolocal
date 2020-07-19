@@ -2,11 +2,25 @@
 
 .floating {
   animation: shadowFloat 1.2s linear alternate infinite;
-  bottom: 30px;
   opacity: 1;
   position: fixed;
-  right: 30px;
   transition: opacity 0.2s linear;
+
+  &.bottom {
+    bottom: 30px;
+  }
+
+  &.top {
+    top: 110px;
+  }
+
+  &.right {
+    right: 30px;
+  }
+
+  &.left {
+    left: 30px;
+  }
 }
 
 .hide-content {
