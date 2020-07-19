@@ -1,6 +1,6 @@
 import Button from './Button';
 import ButtonFloating from './ButtonFloating';
-import Hamburger from './Hamburger';
+import { Hamburger, hamburgerAnimations } from './Hamburger';
 import Modal from './Modal';
 
-export { Button, Hamburger, ButtonFloating, Modal };
+export { Button, Hamburger, hamburgerAnimations, ButtonFloating, Modal };

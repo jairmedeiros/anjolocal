@@ -1,33 +1,98 @@
 import './styles.scss';
 import PropTypes from 'prop-types';
-import { useSelector, useDispatch } from 'react-redux';
-import { activeHamburger, desactiveHamburger } from './actions';
 
 const propTypes = {
   animation: PropTypes.string.isRequired,
+  setActivated: PropTypes.func.isRequired,
+  state: PropTypes.bool.isRequired,
 };
 
-function Hamburger({ animation }) {
-  const isActive = useSelector((state) => state.hamburger.activated);
-  const dispatch = useDispatch();
+function makeReverse(animation) {
+  return `${animation}-r`;
+}
 
-  function handleClick(e) {
-    e.preventDefault();
+const hamburgerAnimations = {
+  DX3: {
+    normal: '3dx',
+    reverse: makeReverse('3dx'),
+  },
+  DY3: {
+    normal: '3dy',
+    reverse: makeReverse('3dy'),
+  },
+  DXDY3: {
+    normal: '3dxdy',
+    reverse: makeReverse('3dxdy'),
+  },
+  ARROW: {
+    normal: 'arrow',
+    reverse: makeReverse('arrow'),
+  },
+  ARROWALT: {
+    normal: 'arrowalt',
+    reverse: makeReverse('arrowalt'),
+  },
+  ARROWTURN: {
+    normal: 'arrowturn',
+    reverse: makeReverse('arrowturn'),
+  },
+  BORING: {
+    normal: 'boring',
+    reverse: makeReverse('boring'),
+  },
+  COLLAPSE: {
+    normal: 'collapse',
+    reverse: makeReverse('collapse'),
+  },
+  ELASTIC: {
+    normal: 'elastic',
+    reverse: makeReverse('elastic'),
+  },
+  EMPHATIC: {
+    normal: 'emphatic',
+    reverse: makeReverse('emphatic'),
+  },
+  MINUS: {
+    normal: 'minus',
+    reverse: makeReverse('minus'),
+  },
+  SLIDER: {
+    normal: 'slider',
+    reverse: makeReverse('slider'),
+  },
+  SPIN: {
+    normal: 'spin',
+    reverse: makeReverse('spin'),
+  },
+  SPRING: {
+    normal: 'spring',
+    reverse: makeReverse('spring'),
+  },
+  STAND: {
+    normal: 'stand',
+    reverse: makeReverse('stand'),
+  },
+  SQUEEZE: {
+    normal: 'squeeze',
+  },
+  VORTEX: {
+    normal: 'vortex',
+    reverse: makeReverse('vortex'),
+  },
+};
 
-    if (isActive) {
-      dispatch(desactiveHamburger());
-    } else {
-      dispatch(activeHamburger());
-    }
+function Hamburger({ animation, setActivated, state }) {
+  function handleClick() {
+    setActivated(!state);
   }
 
   return (
     <button
-      className={`hamburger hamburger--${animation}${isActive ? ' is-active' : ''}`}
+      className={`hamburger hamburger--${animation}${state ? ' is-active' : ''}`}
       type="button"
       onClick={handleClick}
       aria-label="Menu"
-      aria-expanded={isActive}
+      aria-expanded={state}
     >
       <span className="hamburger-box">
         <span className="hamburger-inner" />
@@ -38,4 +103,4 @@ function Hamburger({ animation }) {
 
 Hamburger.propTypes = propTypes;
 
-export default Hamburger;
+export { Hamburger, hamburgerAnimations };

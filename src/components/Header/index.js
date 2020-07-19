@@ -1,11 +1,11 @@
 import './styles.scss';
-import { useSelector } from 'react-redux';
-import { Button, Hamburger } from '../common';
-import { SPRING } from '../common/Hamburger/animations';
+import { useState } from 'react';
+import { Button, Hamburger, hamburgerAnimations } from '../common';
 import { SearchBar } from './components';
 
 function Header() {
-  const hamburgerActivated = useSelector((state) => state.hamburger.activated);
+  const [activated, setActivated] = useState(false);
+  // const hamburgerActivated = useSelector((state) => state.hamburger.activated);
 
   return (
     <>
@@ -25,14 +25,14 @@ function Header() {
                 Cadastrar instituição
               </Button>
             </div>
-            <Hamburger animation={SPRING.normal} />
+            <Hamburger
+              state={activated}
+              setActivated={setActivated}
+              animation={hamburgerAnimations.SPRING.normal}
+            />
           </div>
         </div>
-        <div
-          className={`container header-small-content${
-            !hamburgerActivated ? ' hide-menu' : ' show-menu'
-          }`}
-        >
+        <div className={`container header-small-content${activated ? ' show-menu' : ' hide-menu'}`}>
           <SearchBar />
           <hr />
           <div className="button-content">
