@@ -2,8 +2,7 @@ import './styles.scss';
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
-import useWidthPage from '../../../utils/hooks/useWidthPage';
-import { useMouseEvent, mouseEvents } from '../../../utils/hooks/useMouseEvent';
+import { useWidthPage, useMouseEvent, mouseEvents } from '../../../utils/hooks';
 
 const propTypes = {
   mainStyle: PropTypes.string,
