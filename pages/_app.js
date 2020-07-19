@@ -1,13 +1,18 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-props-no-spreading */
 
 import { ApolloProvider } from '@apollo/react-hooks';
 import { Provider } from 'react-redux';
 import Head from 'next/head';
+import PropTypes from 'prop-types';
 import { useStore, useApollo } from '../src';
 import { Header, Footer } from '../src/components';
 import { ButtonFloating } from '../src/components/common';
 import { useScript } from '../src/utils/hooks';
+
+const propTypes = {
+  Component: PropTypes.oneOfType([PropTypes.func, PropTypes.object]).isRequired,
+  pageProps: PropTypes.oneOfType([PropTypes.func, PropTypes.object]).isRequired,
+};
 
 function App({ Component, pageProps }) {
   const store = useStore(pageProps.initialReduxState);
@@ -45,5 +50,7 @@ function App({ Component, pageProps }) {
     </Provider>
   );
 }
+
+App.propTypes = propTypes;
 
 export default App;
