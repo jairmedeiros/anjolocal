@@ -45,7 +45,7 @@ function App({ Component, pageProps }) {
             <ButtonFloating
               mainStyle="primary"
               url="/#"
-              contractedText="Oi!"
+              contractedText="🤝"
               expandedText="Colabore com a gente!"
             />
           </main>
