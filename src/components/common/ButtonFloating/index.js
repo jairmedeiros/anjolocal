@@ -1,11 +1,9 @@
+import './styles.scss';
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 import useWidthPage from '../../../utils/hooks/useWidthPage';
-
-import './styles.scss';
-import { MOUSE_DOWN } from '../../../utils/hooks/useMouseEvent/constants';
-import useMouseEvent from '../../../utils/hooks/useMouseEvent';
+import { useMouseEvent, mouseEvents } from '../../../utils/hooks/useMouseEvent';
 
 const propTypes = {
   mainStyle: PropTypes.string,
@@ -28,15 +26,12 @@ function ButtonFloating({ mainStyle, url, emoji, text }) {
   const [mainContentIsShown, setMainContentIsShown] = useState(true);
   const [mainContentIsExpanded, setMainContentIsExpanded] = useState(false);
 
-  useMouseEvent(
-    mainContentIsShown,
-    () => {
-      setMainContentIsExpanded(false);
-      setCloseButtonIsShown(false);
-    },
-    node,
-    MOUSE_DOWN,
-  );
+  function handleMouseDownOutside() {
+    setMainContentIsExpanded(false);
+    setCloseButtonIsShown(false);
+  }
+
+  useMouseEvent(mainContentIsShown, handleMouseDownOutside, node, mouseEvents.MOUSE_DOWN);
 
   function handleCloseClick() {
     setCloseButtonIsShown(false);
