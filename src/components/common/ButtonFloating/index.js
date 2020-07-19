@@ -34,7 +34,7 @@ function ButtonFloating({ mainStyle, url, contractedText, expandedText }) {
 
   function handleClick() {
     if (widthPage.isDesktop || mainContentIsExpanded) {
-      router.push(url);
+      router.push(`/${url}`);
     } else {
       setMainContentIsExpanded(true);
       setCloseButtonIsShown(true);
