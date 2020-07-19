@@ -5,18 +5,13 @@ import { useRouter } from 'next/router';
 import { useWidthPage, useMouseEvent, mouseEvents } from '../../../utils/hooks';
 
 const propTypes = {
-  mainStyle: PropTypes.string,
+  mainStyle: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
-  emoji: PropTypes.string,
-  text: PropTypes.string.isRequired,
+  contractedText: PropTypes.string.isRequired,
+  expandedText: PropTypes.string.isRequired,
 };
 
-const defaultProps = {
-  mainStyle: null,
-  emoji: null,
-};
-
-function ButtonFloating({ mainStyle, url, emoji, text }) {
+function ButtonFloating({ mainStyle, url, contractedText, expandedText }) {
   const router = useRouter();
   const widthPage = useWidthPage();
   const node = useRef();
@@ -74,8 +69,10 @@ function ButtonFloating({ mainStyle, url, emoji, text }) {
             mainContentIsExpanded ? ' show' : ''
           }`}
         >
-          <div className="emoji">{emoji}</div>
-          <div className={`text-floating${mainContentIsExpanded ? ' show' : ''}`}>{text}</div>
+          <div className="contracted-text">{contractedText}</div>
+          <div className={`text-floating${mainContentIsExpanded ? ' show' : ''}`}>
+            {expandedText}
+          </div>
         </button>
       </div>
     </div>
@@ -83,7 +80,5 @@ function ButtonFloating({ mainStyle, url, emoji, text }) {
 }
 
 ButtonFloating.propTypes = propTypes;
-
-ButtonFloating.defaultProps = defaultProps;
 
 export default ButtonFloating;

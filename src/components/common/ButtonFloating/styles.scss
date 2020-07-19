@@ -15,20 +15,20 @@
 }
 
 .button-floating {
+  min-width: 65px;
   overflow: hidden;
   position: relative;
-  transition: width 0.3s linear;
-  width: 65px;
+  transition: min-width 0.3s linear;
   @include media('>789px') {
-    width: 255px;
+    min-width: 255px;
   }
 
   &.show {
-    width: 255px;
+    min-width: 255px;
   }
 }
 
-.emoji {
+.contracted-text {
   left: 24px;
   padding-top: 1px;
   position: absolute;
