@@ -5,7 +5,6 @@ import { SearchBar } from './components';
 
 function Header() {
   const [activated, setActivated] = useState(false);
-  // const hamburgerActivated = useSelector((state) => state.hamburger.activated);
 
   return (
     <>
