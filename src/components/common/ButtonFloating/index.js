@@ -9,11 +9,11 @@ const propTypes = {
   url: PropTypes.string.isRequired,
   contractedText: PropTypes.string.isRequired,
   expandedText: PropTypes.string.isRequired,
-  isBottom: PropTypes.bool.isRequired,
-  isRight: PropTypes.bool.isRequired,
+  bottom: PropTypes.bool.isRequired,
+  right: PropTypes.bool.isRequired,
 };
 
-function ButtonFloating({ mainStyle, url, contractedText, expandedText, isBottom, isRight }) {
+function ButtonFloating({ mainStyle, url, contractedText, expandedText, bottom, right }) {
   const router = useRouter();
   const widthPage = useWidthPage();
   const node = useRef();
@@ -53,8 +53,8 @@ function ButtonFloating({ mainStyle, url, contractedText, expandedText, isBottom
       onMouseEnter={handleHover}
       onMouseLeave={handleHover}
       className={`floating${mainContentIsShown ? '' : ' hide-content'}${
-        isBottom ? ' bottom' : ' top'
-      }${isRight ? ' right' : ' left'}`}
+        bottom ? ' bottom' : ' top'
+      }${right ? ' right' : ' left'}`}
     >
       <div className="floating-inner">
         <button

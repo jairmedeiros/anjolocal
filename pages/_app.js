@@ -47,8 +47,8 @@ function App({ Component, pageProps }) {
               url="#"
               contractedText="🤝"
               expandedText="Colabore com a gente!"
-              isBottom
-              isRight
+              bottom
+              right
             />
           </main>
           <Footer />
