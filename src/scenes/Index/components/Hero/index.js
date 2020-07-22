@@ -1,76 +1,52 @@
 import './styles.scss';
-import { useSelector, useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import useMergedRef from '@react-hook/merged-ref';
 import NewsletterModal from './components/ModalNewsletter';
-import { showModal, hideModal, sendDataModal } from '../../../../components/common/Modal/actions';
+import { useWidthPage, useMouseEvent, mouseEvents } from '../../../../utils/hooks';
 
 function Hero() {
-  // TODO: Mandar informacoes de e-mail via store para ser recebido no Modal
   const { register, watch, trigger, clearErrors, errors } = useForm({
     mode: 'onChange',
   });
+  const inputEmail = 'emailHero';
+  const watchInput = watch(inputEmail, '');
   const node = useRef();
-  const watchEmailHero = watch('emailHero', '');
-  const dispatch = useDispatch();
-  const modalId = 'newsletter-hero';
-  const currentModal = useSelector((state) => state.modal.currents).find(
-    (modalFetched) => modalFetched && modalFetched.id === modalId,
-  );
-  const [width, setWidth] = useState(undefined);
+  const widthPage = useWidthPage();
 
-  if (!currentModal) {
-    dispatch(hideModal(modalId));
+  const [modalShown, setModalShown] = useState(false);
+  const [modalData, setModalData] = useState({
+    email: '',
+  });
+
+  function handleEvent() {
+    clearErrors(inputEmail);
   }
 
-  useEffect(() => {
-    setWidth(window.innerWidth);
-
-    function handleResize() {
-      setWidth(window.innerWidth);
-    }
-    window.addEventListener('resize', handleResize);
-
-    function handleClickOutsideModal(e) {
-      if (!node.current.contains(e.target)) {
-        clearErrors('emailHero');
-      }
+  function isErrors(errorHandler) {
+    if (errorHandler) {
+      return true;
     }
 
-    if (errors.emailHero) {
-      document.removeEventListener('mousedown', handleClickOutsideModal);
-    } else {
-      document.addEventListener('mousedown', handleClickOutsideModal);
-    }
+    return false;
+  }
 
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutsideModal);
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [clearErrors, errors, width]);
+  useMouseEvent(!isErrors(errors[inputEmail]), handleEvent, node, mouseEvents.MOUSE_DOWN);
 
-  async function handleClick(e) {
-    e.preventDefault();
-    const result = await trigger('emailHero');
+  async function handleClick() {
+    const result = await trigger(inputEmail);
 
     if (result) {
-      if (currentModal.hide) {
-        dispatch(showModal(modalId));
-        dispatch(
-          sendDataModal(modalId, {
-            email: watchEmailHero,
-          }),
-        );
-      } else {
-        dispatch(hideModal(modalId));
-      }
+      setModalData({
+        email: watchInput,
+      });
+      setModalShown(true);
     }
   }
 
   return (
     <section className="hero">
-      <NewsletterModal id={modalId} />
+      <NewsletterModal data={modalData} shown={modalShown} setShown={setModalShown} />
       <div className="container">
         <div className="hero-inner">
           <div className="hero-copy">
@@ -84,7 +60,7 @@ function Hero() {
                 <input
                   className="input"
                   type="email"
-                  name="emailHero"
+                  name={inputEmail}
                   maxLength={60}
                   ref={useMergedRef(
                     register({
@@ -98,21 +74,21 @@ function Hero() {
                   )}
                   placeholder="Digite seu email…"
                 />
-                {width > 789 && errors.emailHero && (
-                  <div className="hero-input-error">{errors.emailHero.message}</div>
+                {widthPage.isDesktop && errors[inputEmail] && (
+                  <div className="hero-input-error">{errors[inputEmail].message}</div>
                 )}
               </div>
               <div className="control">
                 <button
-                  type="submit"
+                  type="button"
                   onClick={handleClick}
                   className="button button-block button-primary button-shadow hero-button"
                 >
                   Assinar
                 </button>
               </div>
-              {width < 789 && errors.emailHero && (
-                <div className="hero-input-error">{errors.emailHero.message}</div>
+              {!widthPage.isDesktop && errors[inputEmail] && (
+                <div className="hero-input-error">{errors[inputEmail].message}</div>
               )}
             </div>
           </div>
