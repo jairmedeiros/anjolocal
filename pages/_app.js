@@ -6,7 +6,7 @@ import Head from 'next/head';
 import PropTypes from 'prop-types';
 import { useStore, useApollo } from '../src';
 import { Header, Footer } from '../src/components';
-import { ButtonFloating } from '../src/components/common';
+import { ButtonFloating, ButtonFloatingPositions } from '../src/components/common';
 import { useScript } from '../src/utils/hooks';
 
 const propTypes = {
@@ -47,8 +47,7 @@ function App({ Component, pageProps }) {
               url="#"
               contractedText="🤝"
               expandedText="Colabore com a gente!"
-              bottom
-              right
+              position={ButtonFloatingPositions.BOTTOM_RIGHT}
             />
           </main>
           <Footer />
