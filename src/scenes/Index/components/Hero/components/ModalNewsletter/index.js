@@ -70,7 +70,7 @@ function NewsletterModal({ data, shown, setShown }) {
               id="emailNewsletter"
               name="emailNewsletter"
               ref={register({
-                required: 'Insira um e-mail válido.',
+                required: 'Insira um e-mail.',
                 pattern: {
                   value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
                   message: 'Precisamos que seja um e-mail válido.',
