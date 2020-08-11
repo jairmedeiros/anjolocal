@@ -4,7 +4,6 @@ import { updateLatitudeLongitude, updateCityState } from './actions';
 import { useReverseGeocoding } from './utils/locationIq';
 
 function useLocation() {
-  // TODO: Implementar classe de Error.
   const location = useSelector((state) => state.geolocation);
   const dispatch = useDispatch();
   const { data, error } = useReverseGeocoding(location.latitude, location.longitude);

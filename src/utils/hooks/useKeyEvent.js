@@ -18,8 +18,6 @@ const keys = {
   ESC: 'Escape',
 };
 
-// TODO: Necessario passar qual elemento sera atribuido o Listener
-
 function useKeyEvent(condition, innerHandleKeyPressFn, event, SelectedKey) {
   useEffect(() => {
     async function handleKeyPress({ key }) {

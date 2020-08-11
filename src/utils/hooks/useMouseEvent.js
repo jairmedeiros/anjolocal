@@ -19,8 +19,6 @@ const mouseEvents = {
   CONTEXT_MENU: 'contextmenu',
 };
 
-// TODO: Necessario passar qual elemento sera atribuido o Listener
-
 function useMouseEvent(condition, innerHandleClickOutsideFn, node, event) {
   useEffect(() => {
     async function handleClickOutside(e) {
