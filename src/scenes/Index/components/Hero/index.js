@@ -3,10 +3,10 @@ import { useForm } from 'react-hook-form';
 import React, { useState, useRef } from 'react';
 import useMergedRef from '@react-hook/merged-ref';
 import NewsletterModal from './components/ModalNewsletter';
-import { useWidthPage, useMouseEvent, mouseEvents } from '../../../../utils/hooks';
+import { useWidthPage } from '../../../../utils/hooks';
 
 function Hero() {
-  const { register, watch, trigger, clearErrors, errors } = useForm({
+  const { register, watch, trigger, errors } = useForm({
     mode: 'onChange',
   });
   const inputEmail = 'emailHero';
@@ -18,20 +18,6 @@ function Hero() {
   const [modalData, setModalData] = useState({
     email: '',
   });
-
-  function handleEvent() {
-    clearErrors(inputEmail);
-  }
-
-  function isErrors(errorHandler) {
-    if (errorHandler) {
-      return true;
-    }
-
-    return false;
-  }
-
-  useMouseEvent(!isErrors(errors[inputEmail]), handleEvent, node, mouseEvents.MOUSE_DOWN);
 
   async function handleClick() {
     const result = await trigger(inputEmail);
